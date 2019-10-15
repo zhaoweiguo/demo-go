@@ -1,0 +1,51 @@
+[[hosts]]
+    name = "zhaopin"
+
+    [[hosts.locations]]
+        path = "/*"
+        upstream = "wap"
+
+[[hosts]]
+    name = "www.ganji.com"
+
+    [[hosts.locations]]
+        path = "/tel_img/*"
+        upstream = "up_image"
+    [[hosts.locations]]
+        path = "/wap/*"
+        upstream = "wap"
+    [[hosts.locations]]
+        path = "/m"
+        upstream = "wap"
+    [[hosts.locations]]
+        path = "/3g"
+        upstream = "wap"
+    [[hosts.locations]]
+        path = "/fang*"
+        upstream = "fang"
+    [[hosts.locations]]
+        path = "/zp*"
+        upstream = "zhaopin"
+    [[hosts.locations]]
+        path = "/jz*"
+        upstream = "zhaopin"
+    [[hosts.locations]]
+        path = "/qz*"
+        upstream = "zhaopin"
+    [[hosts.locations]]
+        path = "/qjz*"
+        upstream = "zhaopin"
+    [[hosts.locations]]
+        path = "/zhaopin*"
+        upstream = "zhaopin"
+    [[hosts.locations]]
+        path = "/wanted*"
+        upstream = "zhaopin"
+
+[[hosts]]
+    name = "*.ganji.cn"
+
+    [[hosts.locations]]
+        path = "/*"
+        upstream = "wap"
+

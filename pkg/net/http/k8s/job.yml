@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: demo6
+  labels:
+    app: demo6
+spec:
+  template:
+    metadata:
+      name: demo6
+      labels:
+        app: demo6
+    spec:
+      containers:
+        - name: demo6
+          image: registry.cn-hangzhou.aliyuncs.com/xinxi/test:v1
+          imagePullPolicy: IfNotPresent
+          command: ["/demo6"]
+      restartPolicy: OnFailure
+
+

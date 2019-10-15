@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gordondemo
+  labels:
+    app: gordondemo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: gordondemo
+      labels:
+        app: gordondemo
+    spec:
+      containers:
+        - name: gordondemo
+          image: registry.cn-beijing.aliyuncs.com/octopus-test/gordondemo:v8
+          imagePullPolicy: IfNotPresent
+          # command: ["/app/data-query-service/startdocker.sh", "data-query-service.jar"]
+          resources:
+            requests:
+              memory: "256Mi"
+            limits:
+              memory: "512Mi"
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: gordondemo

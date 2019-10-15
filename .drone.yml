@@ -1,0 +1,34 @@
+---
+kind: pipeline
+type: docker
+name: demo-go
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: greeting
+    image: golang:1.12
+    commands:
+      - go build
+
+  - name: 钉钉通知
+    image: guoxudongdocker/drone-dingtalk
+    settings:
+      token:
+        from_secret: dingding
+      type: markdown
+      message_color: true
+      message_pic: true
+      sha_link: true
+    when:
+      status: [failure, success]
+
+trigger:
+  branch:
+    - master
+
+
+
+

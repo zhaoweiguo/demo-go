@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    # service.beta.kubernetes.io/alicloud-loadbalancer-id: ""
+    # service.beta.kubernetes.io/alicloud-loadbalancer-force-override-listeners: "true"
+    # service.beta.kubernetes.io/alicloud-loadbalancer-cert-id: "1417797410880447_1675d7d7e20_912524411_256679895"
+    service.beta.kubernetes.io/alicloud-loadbalancer-protocol-port: "http:80"
+  #    service.beta.kubernetes.io/alicloud-loadbalancer-address-type: "intranet"
+  labels:
+    app: gordondemo
+  name: gordondemo
+  namespace: default
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: gordondemo
+  sessionAffinity: None
+  type: LoadBalancer

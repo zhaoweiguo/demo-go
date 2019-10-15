@@ -1,0 +1,19 @@
+[[abc]]
+    name = "aaa"
+    type = "ttt"
+    T = "111"
+    [abc.middle]
+        A = "a1"
+        B = "b1"
+
+[[abc]]
+    name = "bbb"
+
+    [[abc.cdd]]
+        t = "1"
+
+    [[abc.cdd]]
+        t = "2"
+
+
+
