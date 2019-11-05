@@ -53,6 +53,7 @@ require (
 	github.com/hashicorp/vault/api v1.0.4 // indirect
 	github.com/influxdata/influxdb v1.7.6
 	github.com/influxdata/influxdb1-client v0.0.0-20190809212627-fc22c7df067e
+	github.com/jinzhu/configor v1.1.1
 	github.com/joho/godotenv v1.3.0
 	github.com/jonboulle/clockwork v0.1.0 // indirect
 	github.com/kelseyhightower/envconfig v1.4.0
