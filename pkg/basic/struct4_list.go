@@ -1,31 +1,31 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
 func main() {
-	as := []*A{}   // 这样的数据不会跟随
-	b := &B{}
+	as := []*A4{} // 这样的数据不会跟随
+	b := &B4{}
 	b.init(as)
 
-	as = append(as, &A{"a"})   // 这儿改变而改变
-	as = append(as, &A{"b"})
-	b.string()    // 这儿总是空的数组
+	as = append(as, &A4{"a"}) // 这儿改变而改变
+	as = append(as, &A4{"b"})
+	b.string() // 这儿总是空的数组
 }
 
-type A struct {
+type A4 struct {
 	a string
 }
 
-type B struct {
-	List []*A     // 
+type B4 struct {
+	List []*A4 //
 }
 
-func (b B) init(as []*A) {
+func (b B4) init(as []*A4) {
 	b.List = as
 }
 
-func (b B) string() {
+func (b B4) string() {
 	fmt.Printf("b.List:%v\n", b.List)
 }
