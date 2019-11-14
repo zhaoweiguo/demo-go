@@ -21,8 +21,8 @@ type (
 
 	// Logging provides the logging configuration.
 	Logging struct {
-		Debug  bool `envconfig:"DRONE_LOGS_DEBUG"`
-		Trace  bool `envconfig:"DRONE_LOGS_TRACE"`
+		Debug bool `envconfig:"DRONE_LOGS_DEBUG"`
+		Trace bool `envconfig:"DRONE_LOGS_TRACE"`
 	}
 
 	// Registries provides the registry configuration.
@@ -34,7 +34,7 @@ type (
 )
 
 // $> go build demo1.go
-// $> ./demo
+// $> ./demo1
 // 2019/09/19 12:13:20 {{} {false false} { passwd false}}
 // $> DRONE_DOCKER_CONFIG=abc ./demo1
 // 2019/09/19 12:15:45 {{abc} {false false} { passwd false}}
@@ -44,7 +44,9 @@ func main() {
 
 	cfg := Config{}
 	err := envconfig.Process("", &cfg)
-	if err != nil {log.Println(err)}
+	if err != nil {
+		log.Println(err)
+	}
 	log.Println(cfg)
 
 }
