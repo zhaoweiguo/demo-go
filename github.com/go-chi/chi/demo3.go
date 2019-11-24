@@ -30,8 +30,9 @@ func get_router() *chi.Mux {
 	r := chi.NewRouter()
 	r.Get("/hello", Hello())
 	healthz := anotherHandler()
-	r.Mount("/healthz", healthz) // 合并其他http.Handler or chi Router到本路由路径(方便在大项目拆分api到多个子项目中用)
 
+	// 合并其他http.Handler or chi Router到本路由路径(方便在大项目拆分api到多个子项目中用)
+	r.Mount("/healthz", healthz)
 	return r
 }
 
