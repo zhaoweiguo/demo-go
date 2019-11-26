@@ -14,7 +14,7 @@ func main() {
 
 type Index struct {
 	Title string
-	Body  string
+	URL   string
 }
 
 // indexHandler is an HTTP handler that serves the index page.
@@ -23,10 +23,10 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("index Handler...", indexTemplate.Tree)
 	data := &Index{
 		Title: "Image gallery",
-		Body:  "Welcome to the image gallery.",
+		URL:   "http://www.baidu.com",
 	}
 
-	if err := indexTemplate.Execute(w, data); err != nil {
+	if err := indexTemplate.ExecuteTemplate(w, "content", data); err != nil {
 		log.Println(err)
 	}
 }
