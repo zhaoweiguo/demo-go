@@ -1,12 +1,12 @@
 package main
 
-import(
+import (
 	"fmt"
 	"os"
 )
 
 // folder相关
-func main () {
+func main() {
 	fmt.Println("start")
 
 	// 读取文件与文件夹方法相同
