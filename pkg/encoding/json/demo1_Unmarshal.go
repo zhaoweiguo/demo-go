@@ -12,7 +12,7 @@ func main() {
 	{"Na_me": "2wQuoll2",    "Order": "2Dasyuromorphia"}
 ]`)
 	type Animal struct {
-		Na_Me  string
+		Na_Me string
 		Order string
 	}
 	var animals []Animal
@@ -25,9 +25,9 @@ func main() {
 	var jsonBlob2 = []byte(`{"user_id":"1", "create_time":"123", "context":{"name":"dddd"}}`)
 
 	type Blob2 struct {
-		User_Id string
+		User_Id     string
 		Create_Time string
-		Context struct{
+		Context     struct {
 			Name string
 		}
 	}
@@ -37,6 +37,5 @@ func main() {
 		log.Println(err)
 	}
 	log.Println(blob2)
-
 
 }
