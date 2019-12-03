@@ -28,5 +28,4 @@ func main() {
 	c.A1 = 1
 	c.B1 = true
 	fmt.Println(c, c.A3, c.A1, c.A3.A1)
-
 }
