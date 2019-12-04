@@ -1,15 +1,15 @@
 package main
 
-import(
-	"sort"
+import (
 	"fmt"
+	"log"
+	"sort"
 )
 
 func main() {
 	exprs := []string{"gordon", "simon", "bland", "octopus"}
 	sort.Sort(sort.Reverse(sort.StringSlice(exprs)))
 	fmt.Printf("exprs:%v\n", exprs)
-
 
 	// 1. type IntSlice []string
 	// 2. sort.Reverse: 指定排序从高到低(默认为从低到高)
@@ -21,4 +21,11 @@ func main() {
 	sort.Sort(sort.Reverse(sort.IntSlice(s)))
 	fmt.Printf("sorted s:%v\n", s)
 
+	b := []string{"a", "c", "e", "f", "b", "c", "a", "g", "b", "b", "c"}
+	sort.Strings(b)
+	log.Println(b)
+
+	c := []int{1, 6, 1, 2, 4, 7, 8, 4, 3, 2, 5, 6, 6, 8}
+	sort.Ints(c)
+	log.Println(c)
 }

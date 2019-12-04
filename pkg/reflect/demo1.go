@@ -5,11 +5,13 @@ import (
 	"reflect"
 )
 
+// Bird is a nice type.
 type Bird struct {
 	Name           string
 	LifeExpectance int
 }
 
+// Fly is fly.
 func (b *Bird) Fly() {
 	fmt.Println("I am flying...")
 }
