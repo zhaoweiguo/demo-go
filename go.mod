@@ -34,6 +34,7 @@ require (
 	github.com/gin-contrib/sse v0.0.0-20190301062529-5545eab6dad3 // indirect
 	github.com/gin-gonic/gin v1.3.0
 	github.com/go-chi/chi v4.0.2+incompatible
+	github.com/go-redis/redis/v7 v7.0.0-beta.4
 	github.com/go-sql-driver/mysql v1.4.1
 	github.com/gogo/protobuf v1.2.1 // indirect
 	github.com/golang/groupcache v0.0.0-20190129154638-5b532d6fd5ef // indirect
@@ -69,13 +70,13 @@ require (
 	github.com/onsi/gomega v1.7.0 // indirect
 	github.com/prometheus/client_golang v0.9.4 // indirect
 	github.com/prometheus/common v0.4.1
+	github.com/robfig/cron v0.0.0-20180505203441-b41be1df6967
 	github.com/sirupsen/logrus v1.4.2
 	github.com/smartystreets/goconvey v0.0.0-20190731233626-505e41936337 // indirect
 	github.com/soheilhy/cmux v0.1.4 // indirect
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/viper v1.3.2
 	github.com/tealeg/xlsx v1.0.3
-	github.com/tidwall/pretty v1.0.0 // indirect
 	github.com/tmc/grpc-websocket-proxy v0.0.0-20190109142713-0ad062ec5ee5 // indirect
 	github.com/ugorji/go/codec v0.0.0-20181209151446-772ced7fd4c2 // indirect
 	github.com/unrolled/secure v0.0.0-20181022170031-4b6b7cf51606
@@ -91,7 +92,6 @@ require (
 	google.golang.org/appengine v1.6.1 // indirect
 	gopkg.in/ahmetb/go-linq.v3 v3.0.0 // indirect
 	gopkg.in/airbrake/gobrake.v2 v2.0.9 // indirect
-	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127
 	gopkg.in/gemnasium/logrus-airbrake-hook.v2 v2.1.2
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
