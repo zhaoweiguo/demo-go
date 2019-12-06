@@ -26,6 +26,7 @@ func main() {
 
 	config := sarama.NewConfig()
 	config.Version = version
+	config.ClientID = "demo-go"
 
 	if confKafka.Oldest {
 		config.Consumer.Offsets.Initial = sarama.OffsetOldest
