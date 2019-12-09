@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"runtime"
 	"sync"
@@ -16,11 +17,14 @@ func main() {
 	rand.Seed(time.Now().Unix())
 
 	for i := 0; i < 5; i++ {
+		fmt.Println(i)
 		go sell_tickets(i)
+		//time.Sleep(1*time.Millisecond)
 	}
 
 }
 
 func sell_tickets(i int) {
-
+	fmt.Println("ticket:", i)
+	return
 }

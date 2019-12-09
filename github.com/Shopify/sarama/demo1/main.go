@@ -9,8 +9,8 @@ import (
 	"syscall"
 
 	"github.com/Shopify/sarama"
-	"github.com/zhaoweiguo/demo-go/github.com/Shopify/sarama/conf"
-	"github.com/zhaoweiguo/demo-go/github.com/Shopify/sarama/kafka"
+	"github.com/zhaoweiguo/demo-go/github.com/Shopify/sarama/demo1/conf"
+	"github.com/zhaoweiguo/demo-go/github.com/Shopify/sarama/demo1/kafka"
 )
 
 func main() {
