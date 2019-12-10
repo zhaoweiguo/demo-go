@@ -1,9 +1,9 @@
 package main
 
-import(
+import (
 	"fmt"
-	"sync"
 	"net/http"
+	"sync"
 )
 
 func main() {
@@ -15,13 +15,13 @@ func main() {
 		"http://www.360.cn/",
 	}
 	for _, url := range urls {
-    // Increment the WaitGroup counter.
+		// Increment the WaitGroup counter.
 		wg.Add(1)
-    // Launch a goroutine to fetch the URL.
+		// Launch a goroutine to fetch the URL.
 		go func(url string) {
-        // Decrement the counter when the goroutine completes.
+			// Decrement the counter when the goroutine completes.
 			defer wg.Done()
-        // Fetch the URL.
+			// Fetch the URL.
 			resp, err := http.Get(url)
 			if err != nil {
 				fmt.Printf("%v\n", err)
@@ -31,6 +31,6 @@ func main() {
 
 		}(url)
 	}
-// Wait for all HTTP fetches to complete.
+	// Wait for all HTTP fetches to complete.
 	wg.Wait()
 }
