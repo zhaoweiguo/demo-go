@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"os"
-	"io/ioutil"
 	"flag"
-
+	"fmt"
+	"io/ioutil"
+	"os"
 )
 
 var (

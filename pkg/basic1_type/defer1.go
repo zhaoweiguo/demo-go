@@ -9,7 +9,7 @@ func main() {
 	defer run(1)
 	noerror()
 	defer run(2)
-	defer func () {
+	defer func() {
 		a := recover()
 		fmt.Printf("a: %v\n", a)
 	}()

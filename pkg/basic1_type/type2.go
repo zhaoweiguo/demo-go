@@ -1,6 +1,6 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
@@ -11,6 +11,5 @@ func main() {
 	a := "abc"
 	b := (abc)(a)
 	fmt.Printf("%v\n", b)
-
 
 }
