@@ -29,7 +29,4 @@ func main() {
 	car1 := cars[1]
 	log.Println(car1)
 
-
 }
-
-
