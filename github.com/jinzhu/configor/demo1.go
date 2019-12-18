@@ -25,6 +25,6 @@ var Config = struct {
 }{}
 
 func main() {
-	configor.Load(&Config, "config.yml")
-	fmt.Printf("config: %#v", Config)
+	configor.Load(&Config, "./github.com/jinzhu/configor/config.yml") // 注意这儿是相对整个项目的目录地址
+	fmt.Println("config:", Config)
 }

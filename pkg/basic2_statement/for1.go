@@ -11,8 +11,8 @@ func main() {
 	c = "c"
 	src := []string{a, b, c}
 	log.Println(src)
-	for _, v := range src {
-		log.Println(v)
+	for index, value := range src {
+		log.Println(index, value)
 	}
 
 }
