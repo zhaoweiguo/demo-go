@@ -10,10 +10,10 @@ import (
 
 func TestQuickSort1(t *testing.T) {
 	list := utils.GetArrayOfSize(10)
-
+	//var list = []int{3,4,2,8,1,7}
 	// Sort(list)
 	HoareSort(list, 0, len(list)-1)
-
+	//fmt.Println(list)
 	for i := 0; i < len(list)-2; i++ {
 		if list[i] > list[i+1] {
 			fmt.Println(list)

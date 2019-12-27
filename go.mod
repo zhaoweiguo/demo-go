@@ -41,6 +41,7 @@ require (
 	github.com/golang/mock v1.3.1
 	github.com/google/btree v1.0.0 // indirect
 	github.com/google/go-cmp v0.3.0
+	github.com/google/pprof v0.0.0-20191218002539-d4f498aebedc // indirect
 	github.com/google/wire v0.3.0
 	github.com/gorilla/mux v1.7.2
 	github.com/gorilla/websocket v1.4.0 // indirect
@@ -89,6 +90,7 @@ require (
 	go.uber.org/zap v1.10.0 // indirect
 	golang.org/x/net v0.0.0-20190620200207-3b0461eec859
 	golang.org/x/sync v0.0.0-20190423024810-112230192c58
+	golang.org/x/sys v0.0.0-20191224085550-c709ea063b76 // indirect
 	google.golang.org/appengine v1.6.1 // indirect
 	gopkg.in/ahmetb/go-linq.v3 v3.0.0 // indirect
 	gopkg.in/airbrake/gobrake.v2 v2.0.9 // indirect
