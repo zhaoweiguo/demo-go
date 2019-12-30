@@ -1,10 +1,9 @@
 package main
 
 import (
-	"strings"
 	"fmt"
+	"strings"
 )
-
 
 func main() {
 	var a string
@@ -12,5 +11,3 @@ func main() {
 	b := strings.Split(a, "/")
 	fmt.Println(b[len(b)-1])
 }
-
-
