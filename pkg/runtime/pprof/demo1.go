@@ -1,30 +1,49 @@
 package main
 
 import (
-	"flag"
 	"log"
 	"os"
 	"runtime/pprof"
-	"time"
 )
 
-var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to this file")
-
 func main() {
-	flag.Parse()
-	if *cpuprofile != "" {
-		f, err := os.Create(*cpuprofile)
-		if err != nil {
-			log.Fatal(err)
-		}
-		pprof.StartCPUProfile(f)
-		defer pprof.StopCPUProfile()
+	f, err := os.Create(".cpu.prof")
+	if err != nil {
+		log.Fatal(err)
 	}
-	for i := 0; i < 30; i++ {
-		nums := fibonacci(i)
-		log.Println(nums)
+	defer f.Close()
+	pprof.StartCPUProfile(f)
+	defer pprof.StopCPUProfile()
+
+	for i := 0; i < 42; i++ {
+		go fibonacci(i)
 	}
-	log.Println("====")
+
+	for i := 0; i < 40; i++ {
+		fibonacci2(i)
+	}
+
+	for i := 0; i < 40; i++ {
+		fibonacci4(i)
+	}
+
+	for i := 0; i < 40; i++ {
+		go fibonacci5(i)
+		fibonacci3(i)
+	}
+
+	for i := 0; i < 40; i++ {
+		go fibonacci6(i)
+	}
+
+	log.Println("========")
+
+	mem, err := os.Create(".mem.prof")
+	if err != nil {
+		log.Fatalln(err.Error())
+	}
+	defer mem.Close()
+	pprof.WriteHeapProfile(mem)
 }
 
 func fibonacci(num int) int {
@@ -34,57 +53,37 @@ func fibonacci(num int) int {
 	return fibonacci(num-1) + fibonacci(num-2)
 }
 
-func cpuProfile() {
-	f, err := os.OpenFile("cpu.prof", os.O_RDWR|os.O_CREATE, 0644)
-	if err != nil {
-		log.Fatal(err)
+func fibonacci2(num int) int {
+	if num < 2 {
+		return 1
 	}
-	defer f.Close()
-
-	log.Println("CPU Profile started")
-	//pprof.StartCPUProfile(f)
-	//defer pprof.StopCPUProfile()
-	pprof.WriteHeapProfile(f)
-
-	time.Sleep(10 * time.Second)
-	log.Println("CPU Profile stopped")
+	return fibonacci2(num-1) + fibonacci2(num-2)
 }
 
-func doSomeThingOne(times int) {
-	for i := 0; i < times; i++ {
-		for j := 0; j < times; j++ {
-
-		}
+func fibonacci3(num int) int {
+	if num < 2 {
+		return 1
 	}
+	return fibonacci3(num-1) + fibonacci3(num-2)
 }
-func HoareSort(list []int, low int, high int) {
-	if low >= high {
-		return
+
+func fibonacci4(num int) int {
+	if num < 2 {
+		return 1
 	}
+	return fibonacci3(num-1) + fibonacci3(num-2)
+}
 
-	//[[----递归模板区
-
-	pivot := list[low]
-	right := high
-	left := low
-	for {
-		for list[right] >= pivot && right > low {
-			right--
-		}
-		for list[left] <= pivot && left < high {
-			left++
-		}
-
-		if left < right {
-			list[left], list[right] = list[right], list[left]
-		} else {
-			break
-		}
+func fibonacci5(num int) int {
+	if num < 2 {
+		return 1
 	}
-	list[low], list[right] = list[right], list[low]
-	//--------------]]
+	return fibonacci4(num-1) + fibonacci4(num-2)
+}
 
-	HoareSort(list, low, right)
-
-	HoareSort(list, right+1, high)
+func fibonacci6(num int) int {
+	if num < 2 {
+		return 1
+	}
+	return fibonacci6(num-1) + fibonacci6(num-2)
 }
