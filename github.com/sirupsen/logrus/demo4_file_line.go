@@ -9,8 +9,9 @@ import (
 
 func main() {
 	demo1()
-	demo2()
-	demo3()
+	demo2_text_format()
+	demo2_text_format2()
+	demo3_json_format()
 }
 
 func demo1() {
@@ -20,7 +21,7 @@ func demo1() {
 
 }
 
-func demo2() {
+func demo2_text_format() {
 	log := logrus.New()
 	log.Println("==demo2=============================")
 	log.SetReportCaller(true)
@@ -33,12 +34,19 @@ func demo2() {
 			return f.Function, fmt.Sprintf("%s:%d", filename, f.Line)
 		},
 	})
-
 	log.Error("hello world")
-
 }
 
-func demo3() {
+func demo2_text_format2() {
+	log := logrus.New()
+	log.Println("==demo2, 1=============================")
+	logrus.SetFormatter(&logrus.JSONFormatter{
+		PrettyPrint: true,
+	})
+	log.Error("hello world")
+}
+
+func demo3_json_format() {
 	log := logrus.New()
 	log.Println("==demo3=============================")
 	log.SetReportCaller(true)

@@ -8,6 +8,7 @@ import (
 func main() {
 	var a string
 	a = "a/c/b"
-	b := strings.Split(a, "/")
-	fmt.Println(b[len(b)-1])
+	b := strings.Split(a, "/")      // b
+	c := strings.HasPrefix(a, "a/") // true
+	fmt.Println(b, c)
 }
