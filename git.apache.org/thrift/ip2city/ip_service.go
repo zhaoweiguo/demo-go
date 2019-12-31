@@ -4,6 +4,7 @@
 package ip2city
 
 import (
+	"context"
 	"fmt"
 	"git.apache.org/thrift.git/lib/go/thrift"
 	"math"
@@ -71,7 +72,8 @@ func (p *IpServiceClient) sendGetIpString(ip string) (err error) {
 	args0.Ip = ip
 	err = args0.Write(oprot)
 	oprot.WriteMessageEnd()
-	oprot.Flush()
+	ctx := context.Background()
+	oprot.Flush(ctx)
 	return
 }
 
@@ -88,14 +90,11 @@ func (p *IpServiceClient) recvGetIpString() (value string, err error) {
 	if mTypeId == thrift.EXCEPTION {
 		error2 := thrift.NewTApplicationException(thrift.UNKNOWN_APPLICATION_EXCEPTION, "Unknown Exception")
 		var error3 error
-		error3, err = error2.Read(iprot)
-		if err != nil {
-			return
-		}
-		if err = iprot.ReadMessageEnd(); err != nil {
-			return
-		}
+		error3 = error2.Read(iprot)
 		err = error3
+		if error3 != nil {
+			return
+		}
 		return
 	}
 	if p.SeqId != seqId {
@@ -130,7 +129,8 @@ func (p *IpServiceClient) sendGetIpModel(ip string) (err error) {
 	args4.Ip = ip
 	err = args4.Write(oprot)
 	oprot.WriteMessageEnd()
-	oprot.Flush()
+	ctx := context.Background()
+	oprot.Flush(ctx)
 	return
 }
 
@@ -147,14 +147,14 @@ func (p *IpServiceClient) recvGetIpModel() (value *IpModel, err error) {
 	if mTypeId == thrift.EXCEPTION {
 		error6 := thrift.NewTApplicationException(thrift.UNKNOWN_APPLICATION_EXCEPTION, "Unknown Exception")
 		var error7 error
-		error7, err = error6.Read(iprot)
+		error7 = error6.Read(iprot)
+		err := error7
 		if err != nil {
 			return
 		}
 		if err = iprot.ReadMessageEnd(); err != nil {
 			return
 		}
-		err = error7
 		return
 	}
 	if p.SeqId != seqId {
@@ -186,7 +186,8 @@ func (p *IpServiceClient) sendBlockingCall() (err error) {
 	args8 := NewBlockingCallArgs()
 	err = args8.Write(oprot)
 	oprot.WriteMessageEnd()
-	oprot.Flush()
+	ctx := context.Background()
+	oprot.Flush(ctx)
 	return
 }
 
@@ -203,14 +204,14 @@ func (p *IpServiceClient) recvBlockingCall() (value int32, err error) {
 	if mTypeId == thrift.EXCEPTION {
 		error10 := thrift.NewTApplicationException(thrift.UNKNOWN_APPLICATION_EXCEPTION, "Unknown Exception")
 		var error11 error
-		error11, err = error10.Read(iprot)
+		error11 = error10.Read(iprot)
+		err = error11
 		if err != nil {
 			return
 		}
 		if err = iprot.ReadMessageEnd(); err != nil {
 			return
 		}
-		err = error11
 		return
 	}
 	if p.SeqId != seqId {
@@ -242,22 +243,14 @@ func (p *IpServiceProcessor) ProcessorMap() map[string]thrift.TProcessorFunction
 	return p.processorMap
 }
 
-func NewIpServiceProcessor(handler IpService) *IpServiceProcessor {
-
-	self12 := &IpServiceProcessor{handler: handler, processorMap: make(map[string]thrift.TProcessorFunction)}
-	self12.processorMap["getIpString"] = &ipServiceProcessorGetIpString{handler: handler}
-	self12.processorMap["getIpModel"] = &ipServiceProcessorGetIpModel{handler: handler}
-	self12.processorMap["blocking_call"] = &ipServiceProcessorBlockingCall{handler: handler}
-	return self12
-}
-
 func (p *IpServiceProcessor) Process(iprot, oprot thrift.TProtocol) (success bool, err thrift.TException) {
 	name, _, seqId, err := iprot.ReadMessageBegin()
 	if err != nil {
 		return false, err
 	}
 	if processor, ok := p.GetProcessorFunction(name); ok {
-		return processor.Process(seqId, iprot, oprot)
+		ctx := context.Background()
+		return processor.Process(ctx, seqId, iprot, oprot)
 	}
 	iprot.Skip(thrift.STRUCT)
 	iprot.ReadMessageEnd()
@@ -265,7 +258,8 @@ func (p *IpServiceProcessor) Process(iprot, oprot thrift.TProtocol) (success boo
 	oprot.WriteMessageBegin(name, thrift.EXCEPTION, seqId)
 	x13.Write(oprot)
 	oprot.WriteMessageEnd()
-	oprot.Flush()
+	ctx := context.Background()
+	oprot.Flush(ctx)
 	return false, x13
 
 }
@@ -282,7 +276,8 @@ func (p *ipServiceProcessorGetIpString) Process(seqId int32, iprot, oprot thrift
 		oprot.WriteMessageBegin("getIpString", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		ctx := context.Background()
+		oprot.Flush(ctx)
 		return
 	}
 	iprot.ReadMessageEnd()
@@ -292,7 +287,8 @@ func (p *ipServiceProcessorGetIpString) Process(seqId int32, iprot, oprot thrift
 		oprot.WriteMessageBegin("getIpString", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		ctx := context.Background()
+		oprot.Flush(ctx)
 		return
 	}
 	if err2 := oprot.WriteMessageBegin("getIpString", thrift.REPLY, seqId); err2 != nil {
@@ -304,7 +300,8 @@ func (p *ipServiceProcessorGetIpString) Process(seqId int32, iprot, oprot thrift
 	if err2 := oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 := oprot.Flush(); err == nil && err2 != nil {
+	ctx := context.Background()
+	if err2 := oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -325,7 +322,8 @@ func (p *ipServiceProcessorGetIpModel) Process(seqId int32, iprot, oprot thrift.
 		oprot.WriteMessageBegin("getIpModel", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		ctx := context.Background()
+		oprot.Flush(ctx)
 		return
 	}
 	iprot.ReadMessageEnd()
@@ -335,7 +333,8 @@ func (p *ipServiceProcessorGetIpModel) Process(seqId int32, iprot, oprot thrift.
 		oprot.WriteMessageBegin("getIpModel", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		ctx := context.Background()
+		oprot.Flush(ctx)
 		return
 	}
 	if err2 := oprot.WriteMessageBegin("getIpModel", thrift.REPLY, seqId); err2 != nil {
@@ -347,7 +346,8 @@ func (p *ipServiceProcessorGetIpModel) Process(seqId int32, iprot, oprot thrift.
 	if err2 := oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 := oprot.Flush(); err == nil && err2 != nil {
+	ctx := context.Background()
+	if err2 := oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {
@@ -368,7 +368,8 @@ func (p *ipServiceProcessorBlockingCall) Process(seqId int32, iprot, oprot thrif
 		oprot.WriteMessageBegin("blocking_call", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		ctx := context.Background()
+		oprot.Flush(ctx)
 		return
 	}
 	iprot.ReadMessageEnd()
@@ -378,7 +379,8 @@ func (p *ipServiceProcessorBlockingCall) Process(seqId int32, iprot, oprot thrif
 		oprot.WriteMessageBegin("blocking_call", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
-		oprot.Flush()
+		ctx := context.Background()
+		oprot.Flush(ctx)
 		return
 	}
 	if err2 := oprot.WriteMessageBegin("blocking_call", thrift.REPLY, seqId); err2 != nil {
@@ -390,7 +392,8 @@ func (p *ipServiceProcessorBlockingCall) Process(seqId int32, iprot, oprot thrif
 	if err2 := oprot.WriteMessageEnd(); err == nil && err2 != nil {
 		err = err2
 	}
-	if err2 := oprot.Flush(); err == nil && err2 != nil {
+	ctx := context.Background()
+	if err2 := oprot.Flush(ctx); err == nil && err2 != nil {
 		err = err2
 	}
 	if err != nil {

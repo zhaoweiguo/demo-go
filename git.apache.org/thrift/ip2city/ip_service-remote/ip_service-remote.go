@@ -7,13 +7,14 @@ import (
 	"flag"
 	"fmt"
 	"git.apache.org/thrift.git/lib/go/thrift"
-	"ip2city"
 	"math"
 	"net"
 	"net/url"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/zhaoweiguo/demo-go/git.apache.org/thrift/ip2city"
 )
 
 func Usage() {
