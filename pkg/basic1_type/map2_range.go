@@ -3,7 +3,12 @@ package main
 import "fmt"
 
 func main() {
+	demo_map1_int()
+	demo_map2_string()
+}
 
+func demo_map1_int() {
+	fmt.Println("===demo_map1_int============================")
 	// Here we use `range` to sum the numbers in a slice.
 	// Arrays work like this too.
 	nums := []int{2, 3, 4}
@@ -23,7 +28,10 @@ func main() {
 			fmt.Println("index:", i)
 		}
 	}
+}
 
+func demo_map2_string() {
+	fmt.Println("===demo_map2_string============================")
 	// `range` on map iterates over key/value pairs.
 	kvs := map[string]string{"a": "apple", "b": "banana"}
 	for k, v := range kvs {

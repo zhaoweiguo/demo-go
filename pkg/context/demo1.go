@@ -11,6 +11,29 @@ import (
 	"time"
 )
 
+func main() {
+	//Make a background context
+	ctx := context.Background()
+	//Derive a context with cancel
+	ctxWithCancel, cancelFunction := context.WithCancel(ctx)
+	//defer canceling so that all the resources are freed up
+	//For this and the derived contexts
+	defer func() {
+		fmt.Println("11.Main Defer: canceling context")
+		cancelFunction()
+	}()
+	//Cancel context after a random time
+	//This cancels the request after a random timeout
+	//If this happens, all the contexts derived from this should return
+	go func() {
+		sleepRandom("Main", nil)
+		cancelFunction()
+		fmt.Println("12.Main Sleep complete. canceling context")
+	}()
+	//Do work
+	doWorkContext(ctxWithCancel)
+}
+
 //Slow function
 func sleepRandom(fromFunction string, ch chan int) {
 	//defer cleanup
@@ -93,26 +116,4 @@ func doWorkContext(ctx context.Context) {
 		//This case is selected when processing finishes before the context is cancelled
 		fmt.Println("23. sleepRandomContext returned")
 	}
-}
-func main() {
-	//Make a background context
-	ctx := context.Background()
-	//Derive a context with cancel
-	ctxWithCancel, cancelFunction := context.WithCancel(ctx)
-	//defer canceling so that all the resources are freed up
-	//For this and the derived contexts
-	defer func() {
-		fmt.Println("11.Main Defer: canceling context")
-		cancelFunction()
-	}()
-	//Cancel context after a random time
-	//This cancels the request after a random timeout
-	//If this happens, all the contexts derived from this should return
-	go func() {
-		sleepRandom("Main", nil)
-		cancelFunction()
-		fmt.Println("12.Main Sleep complete. canceling context")
-	}()
-	//Do work
-	doWorkContext(ctxWithCancel)
 }
