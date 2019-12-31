@@ -21,6 +21,7 @@ func demo_map1_declare() {
 	a = make(map[string]PersonInfo) // 创建一个新map, ex: make(map[string] PersonInfo, 100)
 	a["123"] = PersonInfo{"123", "gordon"}
 
+	// 直接声明变量并赋值
 	b := map[string]PersonInfo{
 		"123": PersonInfo{"123", "gordon"},
 	}
