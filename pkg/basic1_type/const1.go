@@ -3,7 +3,7 @@ package main
 import "log"
 
 const (
-	userKey int = iota
+	userKey = iota
 	permKey
 	repoKey
 )
