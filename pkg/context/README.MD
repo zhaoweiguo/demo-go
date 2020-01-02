@@ -1,7 +1,17 @@
 
 ## 说明
 
-控制并发有两种经典的方式，一种是WaitGroup，另外一种就是Context
+    控制并发有两种经典的方式，一种是WaitGroup，另外一种就是Context
+    Context接口并不需要我们实现，Go内置已经帮我们实现了2个: context.Background, context.TODO
+        这两个内置的作为最顶层的partent context，衍生出更多的子Context
+    Context的继承衍生:
+        func WithCancel(parent Context) (ctx Context, cancel CancelFunc)
+        func WithDeadline(parent Context, deadline time.Time) (Context, CancelFunc)
+        func WithTimeout(parent Context, timeout time.Duration) (Context, CancelFunc)
+        func WithValue(parent Context, key, val interface{}) Context
+
+        
+
 
 ## Context使用规则
 
