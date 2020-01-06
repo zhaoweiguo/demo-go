@@ -1,10 +1,10 @@
 // usage: http://go-database-sql.org/
 package main
 
-import(
+import (
 	"database/sql"
-    "fmt"
-    _ "github.com/go-sql-driver/mysql"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func main() {
@@ -40,8 +40,8 @@ func main() {
 			panic(err.Error())
 		}
 		var value string
-		for i, col := range values{
-//			fmt.Println("==", col)   // 都是byte[]
+		for i, col := range values {
+			//			fmt.Println("==", col)   // 都是byte[]
 			if col == nil {
 				value = "NUL"
 			} else {
@@ -51,8 +51,5 @@ func main() {
 		}
 		fmt.Println("----------------")
 	}
-
-
-
 
 }
