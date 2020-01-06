@@ -7,10 +7,12 @@ import (
 )
 
 func main() {
+	demo1()
 	demo2()
 }
 
 func demo1() {
+	fmt.Println("===demo1============================")
 	var jsonBlob = []byte(`[
 	{"na_me": "Pl2at_ypus", "Order": "Monostremata"},
 	{"Na_me": "2wQuoll2",    "Order": "2Dasyuromorphia"}
@@ -44,7 +46,7 @@ func demo1() {
 }
 
 func demo2() {
-
+	fmt.Println("===demo1============================")
 	type Attributes struct {
 		AttrTime    string   `json:"attr_time,omitempty"`
 		AttributeId string   `json:"attribute_id,omitempty"`
