@@ -3,3 +3,4 @@
 go.sum
 .vscode
 demo-go
+core.sqlite

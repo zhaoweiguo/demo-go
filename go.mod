@@ -58,14 +58,17 @@ require (
 	github.com/influxdata/influxdb v1.7.6
 	github.com/influxdata/influxdb1-client v0.0.0-20190809212627-fc22c7df067e
 	github.com/jinzhu/configor v1.1.1
+	github.com/jmoiron/sqlx v0.0.0-20180614180643-0dae4fefe7c0
 	github.com/joho/godotenv v1.3.0
 	github.com/jonboulle/clockwork v0.1.0 // indirect
 	github.com/kelseyhightower/envconfig v1.4.0
+	github.com/lib/pq v1.0.0
 	github.com/mailgun/holster v3.0.0+incompatible // indirect
 	github.com/mailgun/iptools v0.0.0-20170310010557-ba8d5743f678 // indirect
 	github.com/mailgun/log v0.0.0-20150926000944-2f35a4607f1a // indirect
 	github.com/mailgun/metrics v0.0.0-20170714162148-fd99b46995bd // indirect
 	github.com/mailgun/scroll v1.2.2
+	github.com/mattn/go-sqlite3 v1.9.0
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/mitchellh/hashstructure v1.0.0 // indirect
 	github.com/onsi/ginkgo v1.10.1 // indirect
