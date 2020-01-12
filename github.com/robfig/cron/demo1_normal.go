@@ -6,6 +6,10 @@ import (
 )
 
 func main() {
+	demo1()
+}
+
+func demo1() {
 	c := cron.New() // 新建一个定时任务对象
 	i := 1
 	c.AddFunc("*/1 * * * * *", func() { // 1秒执行一次
