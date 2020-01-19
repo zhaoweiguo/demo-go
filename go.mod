@@ -12,6 +12,7 @@ require (
 	github.com/Shopify/sarama v1.22.1
 	github.com/bitly/go-simplejson v0.5.0
 	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 // indirect
+	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/codegangsta/cli v1.20.0
 	github.com/codegangsta/negroni v1.0.0 // indirect
 	github.com/coreos/bbolt v1.3.3 // indirect
@@ -74,6 +75,7 @@ require (
 	github.com/mitchellh/hashstructure v1.0.0 // indirect
 	github.com/onsi/ginkgo v1.10.1 // indirect
 	github.com/onsi/gomega v1.7.0 // indirect
+	github.com/opentracing/opentracing-go v1.1.0
 	github.com/prometheus/client_golang v0.9.4 // indirect
 	github.com/prometheus/common v0.4.1
 	github.com/robfig/cron v0.0.0-20180505203441-b41be1df6967
@@ -85,6 +87,8 @@ require (
 	github.com/tealeg/xlsx v1.0.3
 	github.com/tidwall/pretty v1.0.0 // indirect
 	github.com/tmc/grpc-websocket-proxy v0.0.0-20190109142713-0ad062ec5ee5 // indirect
+	github.com/uber/jaeger-client-go v2.22.1+incompatible
+	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
 	github.com/ugorji/go/codec v0.0.0-20181209151446-772ced7fd4c2 // indirect
 	github.com/unrolled/secure v0.0.0-20181022170031-4b6b7cf51606
 	github.com/urfave/cli v1.22.1
