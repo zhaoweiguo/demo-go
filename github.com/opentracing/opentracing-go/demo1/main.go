@@ -5,7 +5,7 @@ import (
 	"github.com/opentracing/opentracing-go/log"
 	"os"
 
-	"github.com/zhaoweiguo/demo-go/github.com/opentracing/opentracing-go/lib"
+	"github.com/zhaoweiguo/demo-go/github.com/opentracing/opentracing-go/lib/tracing"
 )
 
 func main() {
@@ -13,7 +13,7 @@ func main() {
 		panic("ERROR: Expecting one argument")
 	}
 
-	tracer, closer := lib.Init("hello-world")
+	tracer, closer := tracing.Init("hello-world")
 	defer closer.Close()
 
 	helloTo := os.Args[1]
