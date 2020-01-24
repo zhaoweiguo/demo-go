@@ -1,8 +1,8 @@
 package main
 
 import (
-	"go.etcd.io/etcd/clientv3"
-	etcdnaming "go.etcd.io/etcd/clientv3/naming"
+	"github.com/coreos/etcd/clientv3"
+	etcdnaming "github.com/coreos/etcd/clientv3/naming"
 	"log"
 
 	"google.golang.org/grpc"

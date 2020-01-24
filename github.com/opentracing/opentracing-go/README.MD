@@ -17,7 +17,8 @@ $ docker run -d --name jaeger \
 
 ## 参考实例
 
-https://github.com/yurishkuro/opentracing-tutorial
+* https://github.com/yurishkuro/opentracing-tutorial
+* https://juejin.im/post/5d7ed711e51d4562165535ab
 
 ## golang语言版
 
