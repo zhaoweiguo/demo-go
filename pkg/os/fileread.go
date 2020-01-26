@@ -8,6 +8,7 @@ import (
 // folder相关
 func main() {
 	demo1()
+	demo2()
 }
 
 func demo1() {

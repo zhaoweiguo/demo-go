@@ -7,12 +7,12 @@ import (
 )
 
 func main() {
-	normal1()
+	normal1_common()
 	normal2_env()
-	normal3()
+	normal3_op()
 }
 
-func normal1() {
+func normal1_common() {
 	fmt.Println("normal1 start=====================")
 	homedir, err := os.UserHomeDir()
 	fmt.Println(homedir, err)
@@ -26,10 +26,15 @@ func normal1() {
 	tmpdir := os.TempDir()
 	fmt.Println(tmpdir)
 
-	link := ""
-	os.Readlink(link)
+	linkPath := "./github/golang"
+	link, err := os.Readlink(linkPath)
+	fmt.Println(link)
 
-	os.Lstat("/tmp")
+	fi, err := os.Lstat("/tmp")
+	if err != nil {
+		panic(err.Error())
+	}
+	fmt.Println(fi.Name(), fi.IsDir())
 
 }
 
@@ -39,7 +44,8 @@ func normal2_env() {
 	fmt.Println(env)
 }
 
-func normal3() {
+// 文件(夹)相关操作
+func normal3_op() {
 	fmt.Println("normal3 文件(夹)操作 start=====================")
 
 	testRootfolder := "./1111111"
@@ -54,5 +60,10 @@ func normal3() {
 
 	// 注: 需要注释掉才能看到上面创建的
 	os.RemoveAll(testRootfolder)
+
+	source := "./go.mod/"
+	target := "/tmp/target"
+	os.Link(source, target)    // 硬链接
+	os.Symlink(source, target) // 软链接
 
 }

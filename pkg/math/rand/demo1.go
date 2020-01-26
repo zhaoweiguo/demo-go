@@ -8,13 +8,29 @@ import (
 )
 
 func main() {
+	demo_normal()
+	demo_int()
+	demo_float()
+}
+
+func demo_normal() {
+	fmt.Println("0demo_normal start===============================")
+
 	//	seed, _ := strconv.ParseInt(time.Now().Format("20060102150405"), 10, 0)
 	fmt.Println(time.Now().UnixNano())
 	rand.Seed(time.Now().UnixNano())
 
+}
+
+func demo_int() {
+	fmt.Println("1demo_int start===============================")
 	for i := 0; i < 20; i++ {
-		fmt.Println(rand.Intn(3))
+		fmt.Println(rand.Intn(5))
 	}
+}
+
+func demo_float() {
+	fmt.Println("2demo_int start===============================")
 
 	for i := 0; i < 10; i++ {
 		r := rand.New(rand.NewSource(time.Now().UnixNano())) // 设定rand种子
@@ -28,5 +44,4 @@ func main() {
 
 		time.Sleep(time.Duration(100) * time.Microsecond)
 	}
-
 }
