@@ -7,11 +7,11 @@ import (
 )
 
 func main() {
-	demo1_string2()
+	demo2_string1()
 }
 
 // 字符串拼接
-func demo1_string2() {
+func demo2_string1() {
 	str1 := "Gordon is a nice guy, isn't he?"
 	str2 := " Yes, he is!"
 

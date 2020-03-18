@@ -24,12 +24,12 @@ func (helpA HelpA) Help(a int, b string) {
 	fmt.Println(a, b)
 }
 
-var h Helper
+var f, h Helper
 
 func main() {
 	h = HelpA{}
 	aaa := new(AAA)
-	f := aaa.do(h)
+	f = aaa.do(h)
 	for i := 0; i < 10; i++ {
 		f.Help(i, "gordon")
 	}

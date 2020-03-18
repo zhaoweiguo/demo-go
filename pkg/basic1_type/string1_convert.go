@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	AscII()
+	convertAscII()
 	stringToInt()
 }
 

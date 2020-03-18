@@ -22,8 +22,8 @@ func demo2() {
 
 func demo3() {
 	fileServer := http.FileServer(http.Dir("/tmp"))
-	http.Handle("/abcd/", http.StripPrefix("/aaa/", fileServer))
-	http.Handle("/")
-	log.Fatal(http.ListenAndServe(":8081", fileServer))
+	http.Handle("/aaa/", http.StripPrefix("/aaa/", fileServer))
+	//http.Handle("/", fileServer)
+	log.Fatal(http.ListenAndServe(":8081", nil))
 
 }
