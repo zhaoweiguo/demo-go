@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-func main()  {
+func main() {
 	router := gin.Default()
 	router.Static("/tmp1", "/tmp")
 	router.StaticFS("/tmp2", http.Dir("/tmp"))
@@ -50,8 +50,6 @@ func main()  {
 			return
 		}
 
-
-
 	})
 	router.GET("/file", func(c *gin.Context) {
 
@@ -75,6 +73,3 @@ func main()  {
 
 	s.ListenAndServe()
 }
-
-
-
