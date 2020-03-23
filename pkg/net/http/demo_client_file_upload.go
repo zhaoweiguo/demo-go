@@ -33,6 +33,7 @@ func main() {
 		return
 	}
 	defer file.Close()
+	defer file.Close()
 	io.Copy(fileWriter1, file)
 
 	// file2
