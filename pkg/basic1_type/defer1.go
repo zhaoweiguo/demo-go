@@ -6,29 +6,29 @@ import (
 
 func main() {
 	fmt.Println("main start")
-	defer run(1)
+	defer run("1")
 	noerror()
-	defer run(2)
+	defer run("2")
 	defer func() {
 		a := recover()
-		fmt.Printf("a: %v\n", a)
+		fmt.Printf("inner func: %v\n", a)
 	}()
-	defer run(3)
+	defer run("3")
 	error()
-	defer run(4)
+	defer run("4")
 }
 
 func noerror() {
-	fmt.Println("noerror")
-	defer run(11)
+	fmt.Println("noerror start")
+	defer run("noerror end with defer")
 }
 
 func error() {
 	fmt.Println("error")
-	defer run(21)
+	defer run("error end with defer")
 	panic("error")
 }
 
-func run(i int) {
-	fmt.Printf("%d\n", i)
+func run(str string) {
+	fmt.Printf("%v\n", str)
 }

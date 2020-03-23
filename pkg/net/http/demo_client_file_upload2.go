@@ -35,41 +35,30 @@ func main() {
 	defer file.Close()
 	io.Copy(fileWriter1, file)
 
-	// file2
-	fileWriter2, err := bodyWriter.CreateFormFile("filename2", "file2.txt")
-	if err != nil {
-		log.Println(err.Error())
-		return
-	}
-	file2, err := os.Open("./tmp/file2.txt")
-	if err != nil {
-		log.Println(err.Error())
-		return
-	}
-	defer file2.Close()
-	io.Copy(fileWriter2, file2)
+	//// file2
+	//fileWriter2, err := bodyWriter.CreateFormFile("filename2", "file2.txt")
+	//if err != nil {
+	//	log.Println(err.Error())
+	//	return
+	//}
+	//file2, err := os.Open("./tmp/file2.txt")
+	//if err != nil {
+	//	log.Println(err.Error())
+	//	return
+	//}
+	//defer file2.Close()
+	//io.Copy(fileWriter2, file2)
 
 	// other form data
-	extraParams := map[string][]string{
-		"title":   []string{"标题"},
-		"to":      []string{"admin@zhaoweiguo.com"},
-		"content": []string{"http multipart测试项目"},
-		"types":   []string{"dingtalk", "email"},
-	}
-	for key, values := range extraParams {
-		for _, value := range values {
-			err = bodyWriter.WriteField(key, value)
-			if err != nil {
-				log.Println(err.Error())
-				return
-			}
-		}
-	}
+	err = bodyWriter.WriteField("title", "标题")
+	err = bodyWriter.WriteField("to", "admin@zhaoweiguo.com")
+	err = bodyWriter.WriteField("content", "http multipart测试项目")
+	err = bodyWriter.WriteField("types", "email")
 
 	contentType := bodyWriter.FormDataContentType()
 	log.Println(contentType)
-	log.Println(string(bodyBuffer.Bytes()))
-	bodyWriter.Close() // 必须先请求前前半writer
+	//log.Println(string(bodyBuffer.Bytes()))
+	bodyWriter.Close()
 
 	resp, err := http.Post(uri, contentType, bodyBuffer)
 	if err != nil {

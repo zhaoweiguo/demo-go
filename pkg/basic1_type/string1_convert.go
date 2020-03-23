@@ -8,6 +8,7 @@ import (
 func main() {
 	convertAscII()
 	stringToInt()
+	intToString()
 }
 
 func stringToInt() {
@@ -21,6 +22,14 @@ func stringToInt() {
 	fmt.Printf("c:按8进制转[%T]%d\n", c, c) //127 (本来结果是0X12345对应的10进制，但由于int8限制，剩下的截断了)
 
 	fmt.Println("====end string to int....")
+}
+
+func intToString() {
+	fmt.Println("====start int to string....")
+	a := 12345
+	b := fmt.Sprintf("str_%d", a)
+	fmt.Println(b)
+	fmt.Println("====end int to string....")
 }
 
 func convertAscII() {

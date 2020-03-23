@@ -9,6 +9,10 @@ import (
 	"os"
 )
 
+func init() {
+	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
+}
+
 //对应client: net/http/demo_client_file_upload
 // 请求结果查看文件./tmp/file1.new和./tmp/file2.new
 func main() {
@@ -38,21 +42,25 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 			log.Printf("==== ERROR\n")
 			writeErrorResponse(http.StatusBadRequest, err, w)
 			return
+		} else {
+			log.Println(part.Header)
 		}
 
 		filename := part.FileName()
 		formname := part.FormName()
 
-		log.Printf("==== filename=[%s], forname=[%s]\n", filename, formname)
+		log.Printf("==== filename=[%s], formname=[%s]\n", filename, formname)
 		if filename != "" { // this is FileData
 			dst, err := os.Create("./tmp/" + filename + ".new")
 			if err != nil {
+				log.Println("")
 				writeErrorResponse(http.StatusBadRequest, err, w)
 				return
 			}
 			defer dst.Close()
 			_, err = io.Copy(dst, part)
 			if err != nil {
+				log.Println("")
 				dst.Close()
 				writeErrorResponse(http.StatusBadRequest, err, w)
 				return
@@ -60,17 +68,19 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 		} else if formname == "title" { // this is FormData
 			data, err := ioutil.ReadAll(part)
 			if err != nil {
+				log.Println("")
 				writeErrorResponse(http.StatusBadRequest, err, w)
 				return
 			}
-			log.Printf("forname[%s]=[%s]\n", formname, string(data))
+			log.Printf("formname title->[%s]=[%s]\n", formname, string(data))
 		} else { // other FormData
 			data, err := ioutil.ReadAll(part)
 			if err != nil {
+				log.Println("")
 				writeErrorResponse(http.StatusBadRequest, err, w)
 				return
 			}
-			log.Printf("forname[%s]=[%s]\n", formname, string(data))
+			log.Printf("formname[%s]=[%s]\n", formname, string(data))
 		}
 	}
 
@@ -78,12 +88,15 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func writeErrorResponse(code int, err error, w http.ResponseWriter) {
+	log.Println(code, err)
 	response := map[string]string{"error": err.Error()}
 	writeResponse(code, response, w)
 }
 func writeResponse(code int, jsonres interface{}, w http.ResponseWriter) {
+	log.Println(code, jsonres)
 	b, err := json.Marshal(jsonres)
 	if err != nil {
+		log.Println(code, err)
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte(err.Error()))
 	} else {
