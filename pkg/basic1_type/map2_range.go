@@ -33,7 +33,8 @@ func demo_map1_int() {
 func demo_map2_string() {
 	fmt.Println("===demo_map2_string============================")
 	// `range` on map iterates over key/value pairs.
-	kvs := map[string]string{"a": "apple", "b": "banana"}
+	kvs := map[string]string{"a": "apple", "b": "banana", "c": "cat", "d": "dog"}
+	// 注意: 这儿顺序是乱的
 	for k, v := range kvs {
 		fmt.Printf("%s -> %s\n", k, v)
 	}
