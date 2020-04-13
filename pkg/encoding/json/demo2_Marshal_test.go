@@ -1,12 +1,11 @@
-// Go offers built-in support for JSON encoding and
-// decoding, including to and from built-in and custom
-// data types.
+package json
 
-package main
-
-import "encoding/json"
-import "fmt"
-import "os"
+import (
+	"encoding/json"
+	"fmt"
+	"os"
+	"testing"
+)
 
 // We'll use these two structs to demonstrate encoding and
 // decoding of custom types below.
@@ -14,52 +13,59 @@ type response1 struct {
 	Page   int
 	Fruits []string
 }
+
 type response2 struct {
 	Page   int      `json:"page"`
 	Fruits []string `json:"fruits"`
 }
 
-func main() {
-	demo21_simple()
-	demo22_struct()
-	demo23_array()
+type response3 struct {
+	page   int
+	fruits []string
 }
 
-func demo21_simple() {
-	fmt.Println("===demo21_simple============================")
-	// First we'll look at encoding basic data types to
-	// JSON strings. Here are some examples for atomic
-	// values.
+func TestSimpleBool(t *testing.T) {
 	bolB, _ := json.Marshal(true)
 	fmt.Println(string(bolB))
+}
 
+func TestSimpleInt(t *testing.T) {
 	intB, _ := json.Marshal(1)
 	fmt.Println(string(intB))
+}
 
+func TestSimpleFloat(t *testing.T) {
 	fltB, _ := json.Marshal(2.34)
 	fmt.Println(string(fltB))
+}
 
+func TestSimpleString(t *testing.T) {
 	strB, _ := json.Marshal("gopher")
 	fmt.Println(string(strB))
+}
 
-	// And here are some for slices and maps, which encode
-	// to JSON arrays and objects as you'd expect.
+func TestSimpleArray(t *testing.T) {
 	slcD := []string{"apple", "peach", "pear"}
 	slcB, _ := json.Marshal(slcD)
 	fmt.Println(string(slcB))
-
-	fmt.Println("-----pretty1")
 	// MarshalIndent就是数据格式化的Marshal功能
 	slcBPretty, _ := json.MarshalIndent(slcD, "", "  ")
 	fmt.Println(string(slcBPretty))
+}
 
+func TestSimpleMap(t *testing.T) {
 	mapD := map[string]int{"apple": 5, "lettuce": 7}
 	mapB, _ := json.Marshal(mapD)
 	fmt.Println(string(mapB))
 }
 
-func demo22_struct() {
-	fmt.Println("===demo22_struct============================")
+func TestSimpleMap2(t *testing.T) {
+	mapD := map[string]interface{}{"apple": 5, "lettuce": []string{"a", "b"}}
+	mapB, _ := json.Marshal(mapD)
+	fmt.Println(string(mapB))
+}
+
+func TestMarshalStruct1(t *testing.T) {
 	res1D := &response1{
 		Page:   1,
 		Fruits: []string{"apple", "peach", "pear"},
@@ -69,7 +75,10 @@ func demo22_struct() {
 
 	res1BPretty, _ := json.MarshalIndent(res1D, "#", "   ")
 	fmt.Println(string(res1BPretty))
+}
 
+// 指定json的字段名(与结构体response1不同的点)
+func TestMarshalStruct2(t *testing.T) {
 	// struct with tag
 	res2D := &response2{
 		Page:   1,
@@ -78,8 +87,44 @@ func demo22_struct() {
 	res2B, _ := json.Marshal(res2D)
 	fmt.Println(string(res2B))
 }
-func demo23_array() {
-	fmt.Println("===demo23_array============================")
+
+// 字段名为小写时不可见(与结构体response1不同的点)
+func TestMarshalStruct3(t *testing.T) {
+	// struct with tag
+	res2D := &response3{
+		page:   1,
+		fruits: []string{"apple", "peach", "pear"},
+	}
+	res2B, _ := json.Marshal(res2D) // 字段小写不可见,所以返回值为空
+	fmt.Println(string(res2B))
+}
+
+type responseComplex struct {
+	Response1 response1
+	Response2 response2
+	values    string
+}
+
+func TestMarshalStruct4(t *testing.T) {
+	// struct with tag
+	res1 := response1{
+		Page:   1,
+		Fruits: []string{"apple", "peach", "pear"},
+	}
+	res2 := response2{
+		Page:   1,
+		Fruits: []string{"apple", "peach", "pear"},
+	}
+	res3 := &responseComplex{
+		Response1: res1,
+		Response2: res2,
+		values:    "vvvvvv",
+	}
+	res4, _ := json.Marshal(res3)
+	fmt.Println(string(res4))
+}
+
+func TestDemo23_array(t *testing.T) {
 	byt := []byte(`{"num":6.13,"strs":["a","b"]}`)
 	var dat map[string]interface{}
 
@@ -94,7 +139,9 @@ func demo23_array() {
 	strs := dat["strs"].([]interface{})
 	str1 := strs[0].(string)
 	fmt.Println(str1)
+}
 
+func TestStruct3(t *testing.T) {
 	str := `{"page": 1, "fruits": ["apple", "peach"]}`
 	res := response2{}
 	json.Unmarshal([]byte(str), &res)

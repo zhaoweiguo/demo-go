@@ -1,12 +1,13 @@
-package main
+package json
 
 import (
 	"encoding/json"
 	"fmt"
 	"github.com/bitly/go-simplejson"
+	"testing"
 )
 
-func main() {
+func TestJson(tt *testing.T) {
 	//拼凑json   body为map数组
 	var rbody []map[string]interface{}
 	t := make(map[string]interface{})

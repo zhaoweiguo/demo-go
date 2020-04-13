@@ -1,12 +1,13 @@
-package main
+package json
 
 import (
 	"encoding/json"
 	"log"
 	"os"
+	"testing"
 )
 
-func main() {
+func TestEncode(t *testing.T) {
 	user := User{23, "zhaoweiguo", "admin@zhaoweiguo.com"}
 
 	enc := json.NewEncoder(os.Stdout)

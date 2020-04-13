@@ -13,10 +13,13 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.Static("/tmp1", "/tmp")
-	router.StaticFS("/tmp2", http.Dir("/tmp"))
-	router.StaticFile("/tmp3", "/tmp/tmp3")
+	router.Static("/tmp11", "./tmp")                     // 服务静态文件目录(此目录下无index.html报404)
+	router.Static("/tmp12", "/tmp")                      // 服务静态文件目录(此目录下无index.html报404)
+	router.StaticFS("/tmp2", http.Dir("/tmp"))           // 服务虚拟静态文件系统: 系统的/tmp目录
+	router.StaticFile("/tmp31", "./tmp/tmp3/index.html") // 服务单个静态文件, 本项目文件
+	router.StaticFile("/tmp32", "/tmp/tmp3/index.html")  // 服务单个静态文件, 系统根目录文件
 
+	// 断点续传
 	router.GET("file2", func(c *gin.Context) {
 		var start, end int64
 		fmt.Sscanf(c.GetHeader("Range"), "bytes=%d-%d", &start, &end)
@@ -52,7 +55,6 @@ func main() {
 
 	})
 	router.GET("/file", func(c *gin.Context) {
-
 		data := map[string]interface{}{
 			"lang": "55555555555",
 			"tag":  "9999999",
