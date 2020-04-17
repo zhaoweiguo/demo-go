@@ -8,11 +8,10 @@ import (
 	"time"
 )
 
-func main()  {
+func main() {
 	normalConn()
 	userPasswdConn()
 }
-
 
 func normalConn() {
 	log.Println("start...")
@@ -27,7 +26,7 @@ func normalConn() {
 	}
 }
 
-func userPasswdConn()  {
+func userPasswdConn() {
 	log.Println("start...")
 	mongoUri := "mongodb://user:password@xxx.mongodb.rds.aliyuncs.com:3717"
 	client, err := mongo.NewClient(options.Client().ApplyURI(mongoUri))
@@ -39,8 +38,3 @@ func userPasswdConn()  {
 		log.Fatal("err:", err)
 	}
 }
-
-
-
-
-

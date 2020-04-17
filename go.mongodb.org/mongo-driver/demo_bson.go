@@ -40,6 +40,7 @@ D: D is an ordered representation of a BSON document.
 */
 func bsonD() {
 	d := bson.D{{"foo", "bar"}, {"hello", "world"}, {"pi", 3.14159}}
+	log.Println(d)
 }
 
 /*

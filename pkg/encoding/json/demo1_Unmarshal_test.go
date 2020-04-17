@@ -1,18 +1,13 @@
-package main
+package json
 
 import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"testing"
 )
 
-func main() {
-	demo1()
-	demo2()
-}
-
-func demo1() {
-	fmt.Println("===demo1============================")
+func TestDemo1(t *testing.T) {
 	var jsonBlob = []byte(`[
 	{"na_me": "Pl2at_ypus", "Order": "Monostremata"},
 	{"Na_me": "2wQuoll2",    "Order": "2Dasyuromorphia"}
@@ -28,6 +23,9 @@ func demo1() {
 	}
 	log.Printf("%+v", animals)
 
+}
+
+func TestDemo2(t *testing.T) {
 	var jsonBlob2 = []byte(`{"user_id":"1", "create_time":"123", "context":{"name":"dddd"}}`)
 
 	type Blob2 struct {
@@ -38,15 +36,14 @@ func demo1() {
 		}
 	}
 	var blob2 Blob2
-	err = json.Unmarshal(jsonBlob2, &blob2)
+	err := json.Unmarshal(jsonBlob2, &blob2)
 	if err != nil {
 		log.Println(err)
 	}
 	log.Println(blob2)
 }
 
-func demo2() {
-	fmt.Println("===demo1============================")
+func TestDemo3(t *testing.T) {
 	type Attributes struct {
 		AttrTime    string   `json:"attr_time,omitempty"`
 		AttributeId string   `json:"attribute_id,omitempty"`
