@@ -10,6 +10,7 @@ import (
 
 /*
  ./demo5_flag --name1.name2=Gordon --level1.level2=true
+ ./demo5_flag -n=Gordon -l=true
 */
 func main() {
 	app := cli.NewApp()
@@ -26,12 +27,12 @@ func main() {
 	app.Version = Version
 	app.Flags = []cli.Flag{
 		cli.BoolFlag{
-			Name:   "level1.level2",
+			Name:   "level1.level2, l",
 			Usage:  "level mode",
 			EnvVar: "LEVEL",
 		},
 		cli.StringFlag{
-			Name:   "name1.name2",
+			Name:   "name1.name2, n",
 			Usage:  "name",
 			EnvVar: "NAME",
 		},

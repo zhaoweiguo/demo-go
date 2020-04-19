@@ -16,9 +16,8 @@ require (
 	github.com/codegangsta/cli v1.20.0
 	github.com/codegangsta/negroni v1.0.0 // indirect
 	github.com/coreos/bbolt v1.3.3 // indirect
-	github.com/coreos/etcd v3.3.18+incompatible // indirect
+	github.com/coreos/etcd v3.3.18+incompatible
 	github.com/coreos/go-semver v0.3.0 // indirect
-	github.com/coreos/go-systemd v0.0.0-20190321100706-95778dfbb74e // indirect
 	github.com/coreos/pkg v0.0.0-20180928190104-399ea9e2e55f // indirect
 	github.com/davecgh/go-spew v1.1.1
 	github.com/dchest/uniuri v0.0.0-20160212164326-8902c56451e9
@@ -65,6 +64,7 @@ require (
 	github.com/joho/godotenv v1.3.0
 	github.com/jonboulle/clockwork v0.1.0 // indirect
 	github.com/kelseyhightower/envconfig v1.4.0
+	github.com/lextoumbourou/goodhosts v2.1.0+incompatible
 	github.com/lib/pq v1.0.0
 	github.com/mailgun/holster v3.0.0+incompatible // indirect
 	github.com/mailgun/iptools v0.0.0-20170310010557-ba8d5743f678 // indirect
@@ -80,6 +80,7 @@ require (
 	github.com/prometheus/client_golang v0.9.4 // indirect
 	github.com/prometheus/common v0.4.1
 	github.com/robfig/cron v0.0.0-20180505203441-b41be1df6967
+	github.com/rs/zerolog v1.18.0
 	github.com/sirupsen/logrus v1.4.2
 	github.com/smartystreets/goconvey v0.0.0-20190731233626-505e41936337 // indirect
 	github.com/soheilhy/cmux v0.1.4 // indirect
@@ -95,7 +96,7 @@ require (
 	github.com/urfave/cli v1.22.1
 	github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2 // indirect
 	go.etcd.io/bbolt v1.3.3 // indirect
-	go.etcd.io/etcd v3.3.18+incompatible
+	go.etcd.io/etcd v3.3.18+incompatible // indirect
 	go.mongodb.org/mongo-driver v1.0.3
 	go.uber.org/atomic v1.4.0 // indirect
 	go.uber.org/multierr v1.1.0 // indirect
@@ -116,6 +117,8 @@ require (
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
 	gopkg.in/ini.v1 v1.48.0 // indirect
 	gopkg.in/yaml.v2 v2.2.2
+	k8s.io/apimachinery v0.0.0-20181204150028-eb8c8024849b
+	k8s.io/client-go v10.0.0+incompatible
 )
 
 replace github.com/h2non/gock => gopkg.in/h2non/gock.v1 v1.0.14
