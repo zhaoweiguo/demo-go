@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/tools/clientcmd"
 	"log"
 	"testing"
 )
@@ -75,6 +73,30 @@ func TestGetPod(t *testing.T) {
 
 }
 
+func TestGetDeployment(t *testing.T) {
+	clientset := getClientset()
+
+	cases := []struct {
+		name      string
+		namespace string
+	}{
+		{"addms", "default"},
+		{"svc-notice", "pvt"},
+	}
+
+	for _, c := range cases {
+		ns := c.namespace
+		name := c.name
+		app, err := clientset.AppsV1().Deployments(ns).Get(name, metav1.GetOptions{})
+		if err != nil {
+			panic(err.Error())
+		}
+		log.Println(app.GetName(), *app.Spec.Replicas)
+		log.Println(app.Status, app.Name, app.ClusterName)
+		log.Println(app)
+	}
+}
+
 func TestListService(t *testing.T) {
 	clientset := getClientset()
 	cases := []struct {
@@ -100,18 +122,4 @@ func TestListService(t *testing.T) {
 		log.Println(hosts)
 	}
 
-}
-
-func getClientset() *kubernetes.Clientset {
-	kubeconfig := "/Users/zhaoweiguo/.ktctl/.kube/config"
-	config, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
-	if err != nil {
-		panic(err.Error())
-	}
-	clientset, err := kubernetes.NewForConfig(config)
-	if err != nil {
-		panic(err.Error())
-	}
-
-	return clientset
 }
