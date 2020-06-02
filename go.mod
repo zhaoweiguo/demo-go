@@ -32,6 +32,7 @@ require (
 	github.com/drone/go-scm v1.6.1-0.20190930172114-d8fff5ce7761
 	github.com/drone/signal v1.0.0
 	github.com/dustin/go-humanize v1.0.0
+	github.com/flant/kubedog v0.3.4
 	github.com/gin-contrib/sse v0.0.0-20190301062529-5545eab6dad3 // indirect
 	github.com/gin-gonic/gin v1.3.0
 	github.com/go-chi/chi v4.0.2+incompatible
@@ -39,13 +40,10 @@ require (
 	github.com/go-kit/kit v0.8.0
 	github.com/go-redis/redis/v7 v7.0.0-beta.4
 	github.com/go-sql-driver/mysql v1.4.1
-	github.com/gogo/protobuf v1.2.1 // indirect
 	github.com/golang/groupcache v0.0.0-20190129154638-5b532d6fd5ef // indirect
 	github.com/golang/mock v1.3.1
-	github.com/google/btree v1.0.0 // indirect
 	github.com/google/go-cmp v0.3.0
 	github.com/google/pprof v0.0.0-20191218002539-d4f498aebedc // indirect
-	github.com/google/uuid v1.1.1 // indirect
 	github.com/google/wire v0.3.0
 	github.com/gorilla/mux v1.7.2
 	github.com/gorilla/websocket v1.4.0 // indirect
@@ -102,7 +100,7 @@ require (
 	go.uber.org/atomic v1.4.0 // indirect
 	go.uber.org/multierr v1.1.0 // indirect
 	go.uber.org/zap v1.10.0 // indirect
-	golang.org/x/net v0.0.0-20190620200207-3b0461eec859
+	golang.org/x/net v0.0.0-20190812203447-cdfb69ac37fc
 	golang.org/x/sync v0.0.0-20190423024810-112230192c58
 	golang.org/x/sys v0.0.0-20191224085550-c709ea063b76 // indirect
 	golang.org/x/text v0.3.2
@@ -118,8 +116,8 @@ require (
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
 	gopkg.in/ini.v1 v1.48.0 // indirect
 	gopkg.in/yaml.v2 v2.2.2
-	k8s.io/api v0.0.0-20181130031204-d04500c8c3dd
-	k8s.io/apimachinery v0.0.0-20181204150028-eb8c8024849b
+	k8s.io/api v0.0.0-20190918155943-95b840bb6a1f
+	k8s.io/apimachinery v0.0.0-20190913080033-27d36303b655
 	k8s.io/client-go v10.0.0+incompatible
 )
 
