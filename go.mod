@@ -10,6 +10,7 @@ require (
 	github.com/EDDYCJY/go-gin-example v0.0.0-20190519043325-661685173c57
 	github.com/Microsoft/go-winio v0.4.14 // indirect
 	github.com/Shopify/sarama v1.22.1
+	github.com/aliyun/aliyun-log-go-sdk v0.1.12
 	github.com/bitly/go-simplejson v0.5.0
 	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 // indirect
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
@@ -32,12 +33,12 @@ require (
 	github.com/drone/go-scm v1.6.1-0.20190930172114-d8fff5ce7761
 	github.com/drone/signal v1.0.0
 	github.com/dustin/go-humanize v1.0.0
-	github.com/flant/kubedog v0.3.4
+	github.com/flant/kubedog v0.3.4 // indirect
 	github.com/gin-contrib/sse v0.0.0-20190301062529-5545eab6dad3 // indirect
 	github.com/gin-gonic/gin v1.3.0
 	github.com/go-chi/chi v4.0.2+incompatible
 	github.com/go-ini/ini v1.39.0
-	github.com/go-kit/kit v0.8.0
+	github.com/go-kit/kit v0.8.1-0.20190225011659-a8cc1630e08a
 	github.com/go-redis/redis/v7 v7.0.0-beta.4
 	github.com/go-sql-driver/mysql v1.4.1
 	github.com/golang/groupcache v0.0.0-20190129154638-5b532d6fd5ef // indirect
@@ -97,11 +98,10 @@ require (
 	go.etcd.io/bbolt v1.3.3 // indirect
 	go.etcd.io/etcd v3.3.18+incompatible // indirect
 	go.mongodb.org/mongo-driver v1.0.3
-	go.uber.org/atomic v1.4.0 // indirect
 	go.uber.org/multierr v1.1.0 // indirect
 	go.uber.org/zap v1.10.0 // indirect
 	golang.org/x/net v0.0.0-20190812203447-cdfb69ac37fc
-	golang.org/x/sync v0.0.0-20190423024810-112230192c58
+	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
 	golang.org/x/sys v0.0.0-20191224085550-c709ea063b76 // indirect
 	golang.org/x/text v0.3.2
 	google.golang.org/appengine v1.6.1 // indirect

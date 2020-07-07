@@ -1,18 +1,12 @@
-package main
+package regexp
 
 import (
 	"fmt"
 	"regexp"
+	"testing"
 )
 
-func main() {
-	// matched
-	m1, e1 := regexp.MatchString("^/", "/abc")
-	fmt.Printf("ismatched:%t, err:%v\n", m1, e1) // ismatched:true, err:<nil>
-	// not matched
-	m2, e2 := regexp.MatchString("^/", "ab/c")
-	fmt.Printf("ismatched:%t, err:%v\n", m2, e2) // 	ismatched:false, err:<nil>
-
+func TestDemo1(t *testing.T) {
 	re, _ := regexp.Compile("a(x*)b(y*)c")
 	str := "axxbyyyccc   axxbyycc"
 	matchonestr := "aaaaaaxxbdsafdsc"
