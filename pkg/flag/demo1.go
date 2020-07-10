@@ -14,13 +14,16 @@ func main() {
 	// 解析前为默认值
 	fmt.Println(">> 解析前")
 	fmt.Printf("param1:%s\n", *param1)
-	fmt.Printf("param2:%s\n", param2)
+	fmt.Printf("param2:%s\n", *param2)
 
 	// 解析
 	flag.Parse()
 
 	fmt.Println(">> 解析后")
 	fmt.Printf("param1:%s\n", *param1)
-	fmt.Printf("param2:%s\n", param2)
+	fmt.Printf("param2:%s\n", *param2)
+
+	fmt.Println("打印帮助.........")
+	flag.PrintDefaults()
 
 }
