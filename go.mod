@@ -5,7 +5,6 @@ go 1.12
 require (
 	docker.io/go-docker v1.0.0
 	git.apache.org/thrift.git v0.12.0
-	github.com/Azure/go-autorest/autorest/adal v0.7.0 // indirect
 	github.com/BurntSushi/toml v0.3.1
 	github.com/EDDYCJY/go-gin-example v0.0.0-20190519043325-661685173c57
 	github.com/Microsoft/go-winio v0.4.14 // indirect
@@ -74,8 +73,6 @@ require (
 	github.com/mattn/go-sqlite3 v1.9.0
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/mitchellh/hashstructure v1.0.0 // indirect
-	github.com/onsi/ginkgo v1.10.1 // indirect
-	github.com/onsi/gomega v1.7.0 // indirect
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/prometheus/client_golang v0.9.4 // indirect
 	github.com/prometheus/common v0.4.1
@@ -85,7 +82,7 @@ require (
 	github.com/smartystreets/goconvey v0.0.0-20190731233626-505e41936337 // indirect
 	github.com/soheilhy/cmux v0.1.4 // indirect
 	github.com/spf13/cobra v0.0.5
-	github.com/spf13/pflag v1.0.3
+	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.3.2
 	github.com/tealeg/xlsx v1.0.3
 	github.com/tidwall/pretty v1.0.0 // indirect
@@ -101,7 +98,8 @@ require (
 	go.mongodb.org/mongo-driver v1.0.3
 	go.uber.org/multierr v1.1.0 // indirect
 	go.uber.org/zap v1.10.0 // indirect
-	golang.org/x/net v0.0.0-20190812203447-cdfb69ac37fc
+	golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975 // indirect
+	golang.org/x/net v0.0.0-20191004110552-13f9640d40b9
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
 	golang.org/x/sys v0.0.0-20191224085550-c709ea063b76 // indirect
 	golang.org/x/text v0.3.2
@@ -116,10 +114,12 @@ require (
 	gopkg.in/go-playground/validator.v8 v8.18.2 // indirect
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
 	gopkg.in/ini.v1 v1.48.0 // indirect
-	gopkg.in/yaml.v2 v2.2.2
-	k8s.io/api v0.0.0-20190918155943-95b840bb6a1f
-	k8s.io/apimachinery v0.0.0-20190913080033-27d36303b655
+	gopkg.in/yaml.v2 v2.2.8
+	k8s.io/api v0.18.2
+	k8s.io/apimachinery v0.18.5
 	k8s.io/client-go v10.0.0+incompatible
+	k8s.io/utils v0.0.0-20200324210504-a9aa75ae1b89 // indirect
+
 )
 
 replace github.com/h2non/gock => gopkg.in/h2non/gock.v1 v1.0.14
