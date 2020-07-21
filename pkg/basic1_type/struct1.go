@@ -8,6 +8,28 @@ import (
 )
 
 func main() {
+	//demo_struct11()
+	demo_struct12()
+}
+
+func demo_struct12() {
+	child := &Struct1{
+		value: "child",
+	}
+	parent := &Struct1{
+		children: []*Struct1{child},
+	}
+	parent = child
+	fmt.Println(parent.value)
+	fmt.Println(parent.children)
+}
+
+type Struct1 struct {
+	children []*Struct1
+	value    string
+}
+
+func demo_struct11() {
 	a := &A{1}
 	fmt.Printf("a:[%T]%v\n", a, a)   // a:[*main.A]&{1}
 	fmt.Printf("a:[%T]%v\n", *a, *a) // a:[main.A]{1}
