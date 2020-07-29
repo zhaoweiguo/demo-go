@@ -105,6 +105,7 @@ require (
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.3.2
+	github.com/stretchr/testify v1.4.0
 	github.com/tealeg/xlsx v1.0.3
 	github.com/tidwall/pretty v1.0.0 // indirect
 	github.com/tmc/grpc-websocket-proxy v0.0.0-20190109142713-0ad062ec5ee5 // indirect

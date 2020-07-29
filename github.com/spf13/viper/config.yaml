@@ -1,0 +1,15 @@
+key: value
+keymapstring:
+  keystr1: value1
+  keystr2: value2
+keymap:
+  key1:
+    k1: v1
+    k2: v2
+  key2:
+    name: Gordon
+float64: 3.1415926
+int: 23
+bool: true
+time: 1979-05-27T07:32:00Z
+duration: 1s1ms

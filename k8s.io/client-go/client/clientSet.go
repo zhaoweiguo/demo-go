@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	client_go "github.com/zhaoweiguo/demo-go/k8s.io/client-go"
 	"log"
 )
@@ -16,4 +17,6 @@ func main() {
 		log.Panic(err)
 	}
 	log.Println(verInfo)
+	ctx := context.Background()
+	clientSet.CoreV1().Pods("default").Watch(ctx)
 }
