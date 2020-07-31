@@ -25,23 +25,23 @@ require (
 	github.com/coreos/pkg v0.0.0-20180928190104-399ea9e2e55f // indirect
 	github.com/davecgh/go-spew v1.1.1
 	github.com/dchest/authcookie v0.0.0-20120917135355-fbdef6e99866 // indirect
-	github.com/dchest/uniuri v0.0.0-20160212164326-8902c56451e9
-	github.com/docker/distribution v2.7.1+incompatible
+	github.com/dchest/uniuri v0.0.0-20160212164326-8902c56451e9 // indirect
 	github.com/docker/docker v1.13.1
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.4.0 // indirect
-	github.com/drone/drone v0.8.10
+	github.com/drone/drone v0.8.10 // indirect
 	github.com/drone/drone-go v1.0.6 // indirect
 	github.com/drone/drone-runtime v0.0.0-20190210191445-ad403a0ca24e
 	github.com/drone/drone-ui v0.0.0-20191004020100-87de5a7c28a9 // indirect
 	github.com/drone/drone-yaml v1.0.6
 	github.com/drone/envsubst v1.0.1 // indirect
 	github.com/drone/go-license v1.0.2 // indirect
-	github.com/drone/go-login v1.0.4-0.20190311170324-2a4df4f242a2
+	github.com/drone/go-login v1.0.4-0.20190311170324-2a4df4f242a2 // indirect
 	github.com/drone/go-scm v1.6.1-0.20190930172114-d8fff5ce7761
 	github.com/drone/signal v1.0.0
-	github.com/dustin/go-humanize v1.0.0
+	github.com/dustin/go-humanize v1.0.0 // indirect
 	github.com/flant/kubedog v0.3.4 // indirect
+	github.com/gavv/httpexpect/v2 v2.1.0
 	github.com/gin-contrib/sse v0.0.0-20190301062529-5545eab6dad3 // indirect
 	github.com/gin-gonic/gin v1.3.0
 	github.com/go-chi/chi v4.0.2+incompatible
@@ -99,8 +99,8 @@ require (
 	github.com/robfig/cron v0.0.0-20180505203441-b41be1df6967
 	github.com/rs/zerolog v1.18.0
 	github.com/segmentio/ksuid v1.0.2 // indirect
-	github.com/sirupsen/logrus v1.4.2
-	github.com/smartystreets/goconvey v0.0.0-20190731233626-505e41936337 // indirect
+	github.com/sirupsen/logrus v1.4.1
+	github.com/smartystreets/goconvey v0.0.0-20190731233626-505e41936337
 	github.com/soheilhy/cmux v0.1.4 // indirect
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.5
@@ -112,7 +112,7 @@ require (
 	github.com/uber/jaeger-client-go v2.22.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
 	github.com/ugorji/go/codec v0.0.0-20181209151446-772ced7fd4c2 // indirect
-	github.com/unrolled/secure v0.0.0-20181022170031-4b6b7cf51606
+	github.com/unrolled/secure v0.0.0-20181022170031-4b6b7cf51606 // indirect
 	github.com/urfave/cli v1.22.1
 	github.com/vinzenz/yaml v0.0.0-20170920082545-91409cdd725d // indirect
 	github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2 // indirect

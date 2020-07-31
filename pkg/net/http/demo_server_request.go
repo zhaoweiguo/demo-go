@@ -72,6 +72,8 @@ func handleFunc1(w http.ResponseWriter, r *http.Request) {
 	requestUri := r.RequestURI
 	fmt.Printf("requestUri: %v", requestUri)
 
+	w.Write([]byte("ok"))
+
 }
 
 func main() {
