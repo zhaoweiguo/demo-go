@@ -1,8 +1,10 @@
 package client_go
 
 import (
+	corev1 "k8s.io/api/core/v1"
 	"k8s.io/client-go/discovery"
 	"k8s.io/client-go/kubernetes"
+	"k8s.io/client-go/kubernetes/scheme"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 	"log"
@@ -20,6 +22,20 @@ func getClientset() *kubernetes.Clientset {
 	}
 
 	return clientset
+}
+
+func GetRestClient() *rest.RESTClient {
+	config := getBuildConfig()
+	config.APIPath = "api"
+	config.GroupVersion = &corev1.SchemeGroupVersion
+	config.NegotiatedSerializer = scheme.Codecs
+
+	restClient, err := rest.RESTClientFor(config)
+	if err != nil {
+		panic(err)
+	}
+	return restClient
+
 }
 
 func GetDiscoveryClient() *discovery.DiscoveryClient {

@@ -23,7 +23,8 @@ func demo_map1_declare() {
 
 	// 直接声明变量并赋值
 	b := map[string]PersonInfo{
-		"123": PersonInfo{"123", "gordon"},
+		"123":  PersonInfo{"123", "gordon"},
+		"123s": PersonInfo{"123s", "gordon"},
 	}
 	// a == b
 	fmt.Println(a, b)

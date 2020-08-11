@@ -14,7 +14,7 @@ require (
 	github.com/asaskevich/govalidator v0.0.0-20180315120708-ccb8e960c48f // indirect
 	github.com/aws/aws-sdk-go v1.15.57 // indirect
 	github.com/bitly/go-simplejson v0.5.0
-	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 // indirect
+	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869
 	github.com/buildkite/yaml v2.1.0+incompatible // indirect
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/codegangsta/cli v1.20.0
