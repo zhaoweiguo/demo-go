@@ -6,6 +6,10 @@ import (
 	"time"
 )
 
+/*
+1. 加了写锁之后不能加读锁
+2. 加了读锁之后还可以再加读锁
+*/
 func main() {
 	var mutex *sync.RWMutex
 	mutex = new(sync.RWMutex)

@@ -11,8 +11,7 @@ import (
 // $> ./demo1
 // 2019/09/19 11:57:31 YOURS3BUCKET YOURSECRETKEYGOESHERE
 func main() {
-	err := godotenv.Load()
-	if err != nil {
+	if err := godotenv.Load(); err != nil {
 		log.Fatal("Error loading .env file")
 	}
 

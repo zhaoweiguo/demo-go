@@ -10,6 +10,11 @@ import (
 否则的话，如果有default分支，则执行default分支语句，
 如果连default都没有，则select语句会一直阻塞，直到至少有一个IO操作可以进行
 */
+
+/*
+包含多个 case 的 select 是随机触发的，且一次只有一个 case 得到执行。
+极端情况下，如果其中一个 case 发生永久阻塞，则另一个 case 永远不会得到执行。
+*/
 func main() {
 	start := time.Now()
 	c := make(chan interface{})
