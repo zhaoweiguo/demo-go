@@ -6,7 +6,14 @@ import (
 	"sync"
 )
 
+/*
+sync.Once.Do(f func())能保证once只执行一次,这个sync.Once块只会执行一次。
+*/
 var callerInitOnce sync.Once
+
+func init() {
+	log.SetFlags(log.Ltime | log.Lshortfile)
+}
 
 func main() {
 	callerInitOnce.Do(func() {

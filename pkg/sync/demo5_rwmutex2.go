@@ -14,7 +14,7 @@ func main() {
 	var mutex *sync.RWMutex
 	mutex = new(sync.RWMutex)
 	fmt.Println("Lock the lock")
-	mutex.Lock()
+	mutex.Lock() // 1. 加了写锁之后不能加读锁
 	fmt.Println("The lock is locked")
 
 	channels := make([]chan int, 4)
@@ -22,7 +22,7 @@ func main() {
 		channels[i] = make(chan int)
 		go func(i int, c chan int) {
 			fmt.Println("Not read lock: ", i)
-			mutex.RLock()
+			mutex.RLock() // 2. 加了读锁之后还可以再加读锁
 			fmt.Println("Read Locked: ", i)
 			fmt.Println("Unlock the read lock: ", i)
 			time.Sleep(time.Second)
