@@ -10,7 +10,7 @@ import (
 
 func TestKubeWatch(t *testing.T) {
 	viper.SetConfigName(".kubewatch.yaml")
-	viper.AddConfigPath("/Users/zhaoweiguo/9tool/go/src/github.com/zhaoweiguo/demo-go/github.com/spf13/viper/")
+	viper.AddConfigPath("./github.com/zhaoweiguo/demo-go/github.com/spf13/viper/")
 	viper.AutomaticEnv()
 	if err := viper.ReadInConfig(); err == nil {
 		log.Println(viper.ConfigFileUsed())

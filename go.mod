@@ -114,7 +114,7 @@ require (
 	github.com/ugorji/go/codec v0.0.0-20181209151446-772ced7fd4c2 // indirect
 	github.com/unrolled/secure v0.0.0-20181022170031-4b6b7cf51606 // indirect
 	github.com/urfave/cli v1.22.1
-	github.com/vinzenz/yaml v0.0.0-20170920082545-91409cdd725d // indirect
+	github.com/vinzenz/yaml v0.0.0-20170920082545-91409cdd725d
 	github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2 // indirect
 	go.etcd.io/bbolt v1.3.3 // indirect
 	go.etcd.io/etcd v3.3.18+incompatible // indirect

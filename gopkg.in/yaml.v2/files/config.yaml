@@ -1,0 +1,6 @@
+global:
+  header:
+    user-agent: OctopusTesting/0.0.1
+  basic:
+    host: https://appv1.lenovo.com.cn
+    method: GET

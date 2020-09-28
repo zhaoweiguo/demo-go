@@ -11,7 +11,11 @@
         func WithValue(parent Context, key, val interface{}) Context
 
         
+## Context的3个核心用途
 
+1. 超时
+2. 取消
+3. 传参
 
 ## Context使用规则
 
