@@ -10,12 +10,14 @@ func main() {
 	demo3_int()
 	demo8_array_point()
 	demo9_point_array()
+
+	demo_assign()
 }
 
 func demo1_byte() {
 	fmt.Println("===demo1_byte============================")
 	// []byte, []uint8
-	var val []byte = []byte(`"{\"c\":\"b\"}"`)
+	var val []byte = []byte(`"{\"c\":\"b\"}"`) // 这是切片
 	for _, c := range val {
 		fmt.Println(c)
 	}

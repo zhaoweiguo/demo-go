@@ -23,6 +23,7 @@ require (
 	github.com/coreos/etcd v3.3.18+incompatible
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/pkg v0.0.0-20180928190104-399ea9e2e55f // indirect
+	github.com/dailymotion/allure-go v0.5.5
 	github.com/davecgh/go-spew v1.1.1
 	github.com/dchest/authcookie v0.0.0-20120917135355-fbdef6e99866 // indirect
 	github.com/dchest/uniuri v0.0.0-20160212164326-8902c56451e9 // indirect
@@ -55,7 +56,9 @@ require (
 	github.com/google/go-cmp v0.3.0
 	github.com/google/go-jsonnet v0.12.1 // indirect
 	github.com/google/pprof v0.0.0-20191218002539-d4f498aebedc // indirect
+	github.com/google/uuid v1.1.1
 	github.com/google/wire v0.3.0
+	github.com/gopherjs/gopherjs v0.0.0-20200217142428-fce0ec30dd00 // indirect
 	github.com/gorhill/cronexpr v0.0.0-20140423231348-a557574d6c02 // indirect
 	github.com/gorilla/mux v1.7.2
 	github.com/gorilla/websocket v1.4.0 // indirect
@@ -93,11 +96,13 @@ require (
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/oxtoacart/bpool v0.0.0-20150712133111-4e1c5567d7c2 // indirect
 	github.com/petar/GoLLRB v0.0.0-20130427215148-53be0d36a84c // indirect
+	github.com/pkg/errors v0.9.1 // indirect
 	github.com/prometheus/client_golang v0.9.4 // indirect
 	github.com/prometheus/common v0.4.1
 	github.com/rainycape/unidecode v0.0.0-20150907023854-cb7f23ec59be // indirect
 	github.com/robfig/cron v0.0.0-20180505203441-b41be1df6967
 	github.com/rs/zerolog v1.18.0
+	github.com/satori/go.uuid v1.2.0
 	github.com/segmentio/ksuid v1.0.2 // indirect
 	github.com/sirupsen/logrus v1.4.1
 	github.com/smartystreets/goconvey v0.0.0-20190731233626-505e41936337
