@@ -7,6 +7,7 @@ import (
 func main() {
 	demo_assign()
 	demo_capable()
+	demo_sum()
 }
 
 func demo_assign() {
@@ -31,4 +32,21 @@ func demo_capable() {
 	b := a[:3]
 	log.Println(len(b), cap(b)) // 长度是3, capable是10
 	//log.Println(b[5])		// 但5长度大于3超出index
+}
+
+func sum(values []int, result chan int) {
+	sum := 0
+	for _, value := range values {
+		sum += value
+	}
+	result <- sum
+}
+
+func demo_sum() {
+	values := []int{1, 2, 3, 4, 5, 6, 7}
+	resultChan := make(chan int, 2)
+	go sum(values[:len(values)/2], resultChan)
+	go sum(values[len(values)/2:], resultChan)
+	sum1, sum2 := <-resultChan, <-resultChan
+	log.Println("Result:", sum1, sum2, sum1+sum2)
 }

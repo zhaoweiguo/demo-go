@@ -56,7 +56,6 @@ require (
 	github.com/google/go-cmp v0.3.0
 	github.com/google/go-jsonnet v0.12.1 // indirect
 	github.com/google/pprof v0.0.0-20191218002539-d4f498aebedc // indirect
-	github.com/google/uuid v1.1.1
 	github.com/google/wire v0.3.0
 	github.com/gopherjs/gopherjs v0.0.0-20200217142428-fce0ec30dd00 // indirect
 	github.com/gorhill/cronexpr v0.0.0-20140423231348-a557574d6c02 // indirect
@@ -80,6 +79,7 @@ require (
 	github.com/jmoiron/sqlx v0.0.0-20180614180643-0dae4fefe7c0
 	github.com/joho/godotenv v1.3.0
 	github.com/jonboulle/clockwork v0.1.0 // indirect
+	github.com/jroimartin/gocui v0.4.0
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/lextoumbourou/goodhosts v2.1.0+incompatible
 	github.com/lib/pq v1.0.0
@@ -92,6 +92,7 @@ require (
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/mitchellh/hashstructure v1.0.0 // indirect
 	github.com/natessilva/dag v0.0.0-20180124060714-7194b8dcc5c4 // indirect
+	github.com/nsf/termbox-go v0.0.0-20201124104050-ed494de23a00 // indirect
 	github.com/opencontainers/image-spec v1.0.1 // indirect
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/oxtoacart/bpool v0.0.0-20150712133111-4e1c5567d7c2 // indirect

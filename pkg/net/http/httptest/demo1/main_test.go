@@ -10,7 +10,7 @@ import (
 )
 
 /*
-模拟http请求
+模拟http请求，用于验证client请求结果
 主要利用httptest.NewRecorder()创建一个http.ResponseWriter，模拟了真实服务端的响应，
 这种响应时通过调用http.DefaultServeMux.ServeHTTP方法触发的
 */

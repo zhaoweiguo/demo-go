@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -11,22 +10,12 @@ import (
 
 /*
 在测试机上模拟一个服务器，然后进行调用测试
+用于测试服务端代码route是否正确
 */
 
 func mockServer() *httptest.Server {
-	//API调用处理函数
-	sendJson := func(rw http.ResponseWriter, r *http.Request) {
-		u := struct {
-			Name string
-		}{
-			Name: "张三",
-		}
-
-		rw.Header().Set("Content-Type", "application/json")
-		rw.WriteHeader(http.StatusOK)
-		json.NewEncoder(rw).Encode(u)
-	}
 	//适配器转换
+	sendJson := route()
 	return httptest.NewServer(http.HandlerFunc(sendJson))
 }
 
