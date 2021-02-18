@@ -4,6 +4,6 @@ import (
 	"time"
 )
 
-func getTimestampMs() int64 {
+func GetTimestampMs() int64 {
 	return time.Now().UnixNano() / int64(time.Millisecond)
 }

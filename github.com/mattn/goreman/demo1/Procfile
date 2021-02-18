@@ -1,0 +1,4 @@
+web1: go run web.go -a :8091
+web2: go run web.go -a :8092
+web3: go run web.go -a :8083
+web4: go run web.go -a :8084

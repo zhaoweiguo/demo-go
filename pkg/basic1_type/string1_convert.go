@@ -12,7 +12,8 @@ func main() {
 }
 
 func stringToInt() {
-	fmt.Println("====start string to int....")
+	fmt.Println()
+	fmt.Println("====start stringToInt()....")
 	a := "12345"
 	// @action: 都是以变量a字串为基准(int16类型和xx进制都是指变量a)，结果都是int64类型10进制
 	b, _ := strconv.ParseInt(a, 10, 0)   // int类型10进制
@@ -25,7 +26,8 @@ func stringToInt() {
 }
 
 func intToString() {
-	fmt.Println("====start int to string....")
+	fmt.Println()
+	fmt.Println("====start intToString()....")
 	a := 12345
 	b := fmt.Sprintf("str_%d", a)
 	fmt.Println(b)
@@ -33,7 +35,8 @@ func intToString() {
 }
 
 func convertAscII() {
-	fmt.Println("====start convertAscII....")
+	fmt.Println()
+	fmt.Println("====start convertAscII()....")
 	// 把ascII码转为字符
 	a := 111
 	b := string(a)
