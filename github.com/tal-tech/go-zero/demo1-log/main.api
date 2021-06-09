@@ -10,6 +10,7 @@ info(
 
 type (
 	GeneralRequest {
+		Key string `json:"key, optional"`
 	}
 	GeneralResponse {
 		Code string `json:"code"` //返回状态 0:成功 | 2:失败
@@ -23,7 +24,14 @@ service main-api {
 		summary: "查看详情"
 		description: "查看详情"
 	)
-	@handler DetailHandler
-	get /detail(GeneralRequest) returns (GeneralResponse)
+	@handler GoodGetHandler
+	get /good(GeneralRequest) returns (GeneralResponse)
+	
+	@doc (
+		summary: "增加详情点"
+		description: "增加详情点"
+	)
+	@handler GoodAddHandler
+	post /good(GeneralRequest) returns (GeneralResponse)
 	
 }

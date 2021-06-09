@@ -2,6 +2,7 @@
 package types
 
 type GeneralRequest struct {
+	Key string `json:"key, optional"`
 }
 
 type GeneralResponse struct {

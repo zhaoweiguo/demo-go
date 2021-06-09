@@ -10,7 +10,7 @@ import (
 	"github.com/tal-tech/go-zero/rest/httpx"
 )
 
-func DetailHandler(ctx *svc.ServiceContext) http.HandlerFunc {
+func GoodGetHandler(ctx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var req types.GeneralRequest
 		if err := httpx.Parse(r, &req); err != nil {
@@ -18,8 +18,8 @@ func DetailHandler(ctx *svc.ServiceContext) http.HandlerFunc {
 			return
 		}
 
-		l := logic.NewDetailLogic(r.Context(), ctx)
-		resp, err := l.Detail(req)
+		l := logic.NewGoodGetLogic(r.Context(), ctx)
+		resp, err := l.GoodGet(req)
 		if err != nil {
 			httpx.Error(w, err)
 		} else {
