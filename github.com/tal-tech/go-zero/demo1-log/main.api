@@ -1,0 +1,29 @@
+syntax = "v1"
+
+info(
+	title: "Demo Api"
+	desc: "Demo Api Doc"
+	version: "v1.0"
+	host: "127.0.0.1:8888"
+	host_pvt: "demo.zhaoweiguo.com"
+)
+
+type (
+	GeneralRequest {
+	}
+	GeneralResponse {
+		Code string `json:"code"` //返回状态 0:成功 | 2:失败
+		Msg  string `json:"msg"`  //code对应信息
+	}
+)
+
+//用户登录
+service main-api {
+	@doc (
+		summary: "查看详情"
+		description: "查看详情"
+	)
+	@handler DetailHandler
+	get /detail(GeneralRequest) returns (GeneralResponse)
+	
+}
