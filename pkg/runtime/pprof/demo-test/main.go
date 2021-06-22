@@ -15,7 +15,7 @@ func main() {
 	pprof.StartCPUProfile(f)
 	defer pprof.StopCPUProfile()
 
-	for i := 0; i < 40; i++ {
+	for i := 0; i < 42; i++ {
 		go fibonacci(i)
 	}
 

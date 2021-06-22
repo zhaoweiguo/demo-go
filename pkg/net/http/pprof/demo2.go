@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"math/rand"
@@ -21,7 +22,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(err.Error()))
 		return
 	}
-	doSomeThingOne(10000)
+	doSomeThingOne(1000)
 	buff := genSomeBytes()
 	b, err := ioutil.ReadAll(buff)
 	if nil != err {
@@ -34,7 +35,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 func doSomeThingOne(times int) {
 	for i := 0; i < times; i++ {
 		for j := 0; j < times; j++ {
-
+			fmt.Println("0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789")
 		}
 	}
 }

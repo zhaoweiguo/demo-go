@@ -4,3 +4,5 @@ demo1.prof
 demo2
 demo3
 havlak1.prof
+.cpu.prof
+.mem.prof

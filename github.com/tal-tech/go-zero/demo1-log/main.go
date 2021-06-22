@@ -10,6 +10,8 @@ import (
 
 	"github.com/tal-tech/go-zero/core/conf"
 	"github.com/tal-tech/go-zero/rest"
+
+	_ "net/http/pprof"
 )
 
 var configFile = flag.String("f", "github.com/tal-tech/go-zero/demo1-log/etc/main-api.yaml", "the config file")
