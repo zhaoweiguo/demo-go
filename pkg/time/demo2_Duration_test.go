@@ -6,6 +6,13 @@ import (
 	"time"
 )
 
+func TestDuration2(t *testing.T) {
+	second := time.Duration(1) * time.Second
+	a := fmt.Sprint(second)
+	fmt.Printf("second string: %s\n", a)
+
+}
+
 func TestDuration(t *testing.T) {
 
 	timeout := time.Duration(1) * time.Microsecond
