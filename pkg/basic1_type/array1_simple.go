@@ -11,7 +11,6 @@ func main() {
 	demo8_array_point()
 	demo9_point_array()
 
-	demo_assign()
 }
 
 func demo1_byte() {

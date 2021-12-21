@@ -1,4 +1,4 @@
-package const1_iota
+package iota
 
 import (
 	"fmt"

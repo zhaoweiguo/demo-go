@@ -65,7 +65,7 @@ func post_json() {
 func post_urlencode() {
 	uri := "http://39.97.31.155/weixin/corp/text"
 	msg := "hello world"
-	resp, error := http.PostForm(uri, url.Values{"title": {"article title"}, "content": {msg}})
-	log.Println(resp, error)
+	resp, err := http.PostForm(uri, url.Values{"title": {"article title"}, "content": {msg}})
+	log.Println(resp, err)
 
 }

@@ -7,14 +7,14 @@ require (
 	git.apache.org/thrift.git v0.12.0
 	github.com/Azure/azure-storage-blob-go v0.7.0 // indirect
 	github.com/BurntSushi/toml v0.3.1
-	github.com/EDDYCJY/go-gin-example v0.0.0-20190519043325-661685173c57
+	github.com/EDDYCJY/go-gin-example v0.0.0-20190519043325-661685173c57 // indirect
 	github.com/Microsoft/go-winio v0.4.14 // indirect
 	github.com/Shopify/sarama v1.22.1
 	github.com/aliyun/aliyun-log-go-sdk v0.1.12
 	github.com/asaskevich/govalidator v0.0.0-20180315120708-ccb8e960c48f // indirect
 	github.com/aws/aws-sdk-go v1.15.57 // indirect
-	github.com/bitly/go-simplejson v0.5.0
-	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869
+	github.com/bitly/go-simplejson v0.5.0 // indirect
+	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 // indirect
 	github.com/buildkite/yaml v2.1.0+incompatible // indirect
 	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/codegangsta/cli v1.20.0
@@ -50,7 +50,6 @@ require (
 	github.com/go-ini/ini v1.39.0
 	github.com/go-kit/kit v0.9.0
 	github.com/go-redis/redis/v7 v7.0.0-beta.4
-	github.com/go-sql-driver/mysql v1.5.0
 	github.com/golang/mock v1.4.3
 	github.com/google/go-cmp v0.5.0
 	github.com/google/go-jsonnet v0.12.1 // indirect
@@ -82,7 +81,6 @@ require (
 	github.com/mailgun/log v0.0.0-20150926000944-2f35a4607f1a // indirect
 	github.com/mailgun/metrics v0.0.0-20170714162148-fd99b46995bd // indirect
 	github.com/mailgun/scroll v1.2.2
-	github.com/mattn/go-sqlite3 v1.9.0
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/mitchellh/hashstructure v1.0.0 // indirect
 	github.com/natessilva/dag v0.0.0-20180124060714-7194b8dcc5c4 // indirect
@@ -91,7 +89,6 @@ require (
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/oxtoacart/bpool v0.0.0-20150712133111-4e1c5567d7c2 // indirect
 	github.com/petar/GoLLRB v0.0.0-20130427215148-53be0d36a84c // indirect
-	github.com/prometheus/common v0.9.1
 	github.com/rainycape/unidecode v0.0.0-20150907023854-cb7f23ec59be // indirect
 	github.com/robfig/cron v0.0.0-20180505203441-b41be1df6967
 	github.com/rs/zerolog v1.18.0
@@ -112,6 +109,7 @@ require (
 	github.com/ugorji/go/codec v0.0.0-20181209151446-772ced7fd4c2 // indirect
 	github.com/unrolled/secure v0.0.0-20181022170031-4b6b7cf51606 // indirect
 	github.com/urfave/cli v1.22.5
+	github.com/vardius/gollback v1.1.0
 	github.com/vinzenz/yaml v0.0.0-20170920082545-91409cdd725d
 	go.etcd.io/etcd v3.3.18+incompatible // indirect
 	go.mongodb.org/mongo-driver v1.0.3

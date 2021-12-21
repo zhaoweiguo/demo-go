@@ -2,17 +2,17 @@ package main
 
 import (
 	"fmt"
-	"strings"
 	"io/ioutil"
+	"strings"
 )
 
-func main(){
+func main() {
 
 	data, err := ioutil.ReadFile("./city.txt")
 	if err != nil {
 		panic(err.Error())
 	}
-	
+
 	citys := strings.Split(string(data), "--")
 
 	for _, city := range citys {
@@ -23,7 +23,7 @@ func main(){
 	}
 
 	fmt.Println("=======================")
-	dirs, err := ioutil.ReadDir(".")	// 获得指定目录下的文件列表
+	dirs, err := ioutil.ReadDir(".") // 获得指定目录下的文件列表
 	if err != nil {
 		panic(err.Error())
 	}
@@ -35,19 +35,14 @@ func main(){
 		IsDir := dir.IsDir()
 		//Sys := dir.Sys()
 		fmt.Printf("%s\t%d\t%d\t%s\t\t%t\n",
-			Name, Size, Mode, ModeTime.String(),IsDir)
+			Name, Size, Mode, ModeTime.String(), IsDir)
 	}
 
+	//	fmt.Println(len(citys))
 
-//	fmt.Println(len(citys))
+}
 
-
-	
-
-
-
-}	
-/*	
+/*
 
 
 	// step1: add host
@@ -67,7 +62,7 @@ func main(){
 	upstream1, err = backend.AddUpstream(upstream1)
 	if err != nil { // 错误类型处理@todo
 		log.Errorf("init upstream error:%v", err)
-		// @todo send signal 
+		// @todo send signal
 		return err
 	}
 	// step3: add endpoint
@@ -147,7 +142,7 @@ func main(){
 
 func checkData(backend Backend) {
 	hosts, _ := backend.GetHosts()
-	
+
 	for _, h := range hosts {
 		log.Infof("%v", h)
 		fmt.Printf("%v\n", h)

@@ -3,6 +3,7 @@ package json
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/bmizerany/assert"
 	"os"
 	"testing"
 )
@@ -85,7 +86,7 @@ func TestMarshalStruct2(t *testing.T) {
 		Fruits: []string{"apple", "peach", "pear"},
 	}
 	res2B, _ := json.Marshal(res2D)
-	fmt.Println(string(res2B))
+	assert.Equal(t, []byte(`{"page":1,"fruits":["apple","peach","pear"]}`), res2B)
 }
 
 // 字段名为小写时不可见(与结构体response1不同的点)
@@ -96,7 +97,7 @@ func TestMarshalStruct3(t *testing.T) {
 		fruits: []string{"apple", "peach", "pear"},
 	}
 	res2B, _ := json.Marshal(res2D) // 字段小写不可见,所以返回值为空
-	fmt.Println(string(res2B))
+	assert.Equal(t, []byte(`{}`), res2B)
 }
 
 type responseComplex struct {

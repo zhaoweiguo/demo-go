@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	var indexTemplate = template.Must(template.ParseFiles("./template/index.tmpl"))
+	var indexTemplate = template.Must(template.ParseFiles("./template/range.tmpl"))
 	data := &Index2{
 		Title: "Image gallery",
 		URL:   "http://www.baidu.com",
