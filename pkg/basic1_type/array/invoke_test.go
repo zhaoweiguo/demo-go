@@ -1,16 +1,13 @@
-package main
+package array
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
-	demo1()
-	demo2()
-}
 
 // 传递数组
-func demo1() {
+func TestInvoke1(t *testing.T) {
 	// 在函数间传递变量时，总是以值的方式，如果变量是个数组，那么就会整个复制，并传递给函数，
 	//如果数组非常大，比如长度100多万，那么这对内存是一个很大的开销。
 	fmt.Println("===demo1============================")
@@ -20,7 +17,7 @@ func demo1() {
 }
 
 // 传递数组指针
-func demo2() {
+func TestInvoke2(t *testing.T) {
 	fmt.Println("===demo2============================")
 	array := [5]int{1: 2, 3: 4}
 	modify2(&array)

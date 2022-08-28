@@ -1,7 +1,8 @@
-package main
+package array
 
 import (
 	"log"
+	"testing"
 )
 
 /*
@@ -11,14 +12,7 @@ func init() {
 	log.SetFlags(log.Lshortfile | log.Ltime)
 }
 
-func main() {
-	demo_array_notchange()
-	log.Println("==================")
-	demo_array_change()
-	log.Println("==================")
-}
-
-func demo_array_notchange() {
+func TestArray_notchange(t *testing.T) {
 	// 切片改变数组不变
 	// 本质其实是类型转换
 	arr := "Gordon123"
@@ -40,7 +34,7 @@ func demo_array_notchange() {
 	log.Printf("[%T]%v", sliceRune, sliceRune)
 }
 
-func demo_array_change() {
+func TestArray_change(t *testing.T) {
 	// 基于数组的切片：切片改变，数组就变
 	arr := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	slice := arr[:5]
@@ -49,3 +43,8 @@ func demo_array_change() {
 	log.Printf("[%T]%v", arr, arr)
 	log.Printf("[%T]%v", slice, slice)
 }
+
+
+
+
+

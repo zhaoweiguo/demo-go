@@ -27,6 +27,7 @@ func TestDemo1(t *testing.T) {
 	h := sha256.New()
 	h.Write([]byte("hello world\n"))
 	log.Printf("%x\n", h.Sum(nil))
+	log.Printf("%X\n", h.Sum(nil))
 }
 
 // 对文件加密

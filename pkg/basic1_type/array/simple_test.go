@@ -1,19 +1,13 @@
-package main
+package array
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
-	demo1_byte()
-	demo2_string()
-	demo3_int()
-	demo8_array_point()
-	demo9_point_array()
 
-}
 
-func demo1_byte() {
+func TestByte(t *testing.T) {
 	fmt.Println("===demo1_byte============================")
 	// []byte, []uint8
 	var val []byte = []byte(`"{\"c\":\"b\"}"`) // 这是切片
@@ -22,7 +16,7 @@ func demo1_byte() {
 	}
 }
 
-func demo2_string() {
+func TestString(t *testing.T) {
 	fmt.Println("===demo2_string============================")
 	// []string
 	subsCodes := []string{"aa", "vv", "dd", "ee", "gg"}
@@ -41,7 +35,7 @@ func demo2_string() {
 	fmt.Println(car1)
 }
 
-func demo3_int() {
+func TestInt(t *testing.T) {
 	fmt.Println("===demo3_int============================")
 	array := [5]int{1: 1, 3: 4}
 
@@ -53,7 +47,7 @@ func demo3_int() {
 }
 
 // 数组指针
-func demo8_array_point() {
+func TestArray_point(t *testing.T) {
 	fmt.Println("===demo8_array_point============================")
 	array := [5]int{1: 2, 3: 4}
 	point := &array
@@ -61,7 +55,7 @@ func demo8_array_point() {
 }
 
 // 指针数组
-func demo9_point_array() {
+func TestPoint_array(t *testing.T) {
 	//指针数组和数组本身差不多，只不过元素类型是指针
 	fmt.Println("===demo9_point============================")
 	array := [5]*int{1: new(int), 3: new(int)}

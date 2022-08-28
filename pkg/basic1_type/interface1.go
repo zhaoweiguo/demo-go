@@ -27,6 +27,8 @@ func main() {
 	}
 	doInterfaces(maps2)
 	log.Println(maps2)
+
+
 }
 
 func doInterface(variable interface{}) {

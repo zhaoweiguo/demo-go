@@ -3,8 +3,12 @@ package main
 import (
 	"bytes"
 	"encoding/binary"
-	"fmt"
+	"log"
 )
+
+func init()  {
+	log.SetFlags(log.Lshortfile)
+}
 
 // 长度不够，少一个Weight
 var b = []byte{0x48, 0x61, 0x6f, 0x20, 0x43, 0x68, 0x65, 0x6e, 0x00, 0x00, 0x2c}
@@ -38,12 +42,13 @@ func (p *Person) ReadWeight() *Person {
 }
 func (p *Person) Print() *Person {
 	if p.err == nil {
-		fmt.Printf("Name=%s, Age=%d, Weight=%d\n", p.Name, p.Age, p.Weight)
+		log.Printf("Name=%s, Age=%d, Weight=%d\n", p.Name, p.Age, p.Weight)
 	}
 	return p
 }
 func main() {
 	p := Person{}
+	p.ReadName().Print()
 	p.ReadName().ReadAge().ReadWeight().Print()
-	fmt.Println(p.err) // EOF 错误
+	log.Println(p.err) // EOF 错误
 }

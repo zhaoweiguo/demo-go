@@ -20,7 +20,7 @@ require (
 	github.com/codegangsta/cli v1.20.0
 	github.com/codegangsta/negroni v1.0.0 // indirect
 	github.com/coreos/bbolt v1.3.3 // indirect
-	github.com/coreos/etcd v3.3.18+incompatible
+	github.com/coreos/etcd v3.3.18+incompatible // indirect
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/pkg v0.0.0-20180928190104-399ea9e2e55f // indirect
 	github.com/dailymotion/allure-go v0.5.5
@@ -40,7 +40,6 @@ require (
 	github.com/drone/go-login v1.0.4-0.20190311170324-2a4df4f242a2 // indirect
 	github.com/drone/go-scm v1.6.1-0.20190930172114-d8fff5ce7761
 	github.com/drone/signal v1.0.0
-	github.com/dustin/go-humanize v1.0.0 // indirect
 	github.com/flant/kubedog v0.3.4 // indirect
 	github.com/gavv/httpexpect/v2 v2.1.0
 	github.com/gin-contrib/sse v0.0.0-20190301062529-5545eab6dad3 // indirect
@@ -50,8 +49,7 @@ require (
 	github.com/go-ini/ini v1.39.0
 	github.com/go-kit/kit v0.9.0
 	github.com/go-redis/redis/v7 v7.0.0-beta.4
-	github.com/golang/mock v1.4.3
-	github.com/google/go-cmp v0.5.0
+	github.com/google/go-cmp v0.5.5
 	github.com/google/go-jsonnet v0.12.1 // indirect
 	github.com/google/pprof v0.0.0-20191218002539-d4f498aebedc // indirect
 	github.com/google/wire v0.3.0
@@ -76,6 +74,7 @@ require (
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/lextoumbourou/goodhosts v2.1.0+incompatible
 	github.com/lib/pq v1.3.0
+	github.com/lucas-clemente/quic-go v0.25.0
 	github.com/mailgun/holster v3.0.0+incompatible // indirect
 	github.com/mailgun/iptools v0.0.0-20170310010557-ba8d5743f678 // indirect
 	github.com/mailgun/log v0.0.0-20150926000944-2f35a4607f1a // indirect
@@ -113,11 +112,10 @@ require (
 	github.com/vinzenz/yaml v0.0.0-20170920082545-91409cdd725d
 	go.etcd.io/etcd v3.3.18+incompatible // indirect
 	go.mongodb.org/mongo-driver v1.0.3
-	golang.org/x/net v0.0.0-20200707034311-ab3426394381
-	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
-	golang.org/x/text v0.3.3
+	golang.org/x/net v0.0.0-20210428140749-89ef3d95e781
+	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
+	golang.org/x/text v0.3.6
 	google.golang.org/appengine v1.6.1 // indirect
-	google.golang.org/grpc v1.29.1
 	gopkg.in/ahmetb/go-linq.v3 v3.0.0 // indirect
 	gopkg.in/airbrake/gobrake.v2 v2.0.9 // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect

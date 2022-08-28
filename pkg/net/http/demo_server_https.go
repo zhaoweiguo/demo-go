@@ -36,7 +36,7 @@ func mux_handler() {
 	//func ListenAndServeTLS(add string, certFile string, keyFile string, handle Handle) error
 	// 实例和http请求一样
 	//不过把ListenAndServe换为ListenAndServeTLS,如:
-	s.ListenAndServeTLS("cert.pem", "key.pem")
+	s.ListenAndServeTLS("./asserts/cert/server.crt", "./asserts/cert/server_key.pem")
 }
 
 // ============ inner ============
