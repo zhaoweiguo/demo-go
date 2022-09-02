@@ -8,12 +8,12 @@ import (
 	"testing"
 )
 
-func init()  {
+func init() {
 	log.SetFlags(log.Lshortfile)
 }
 
 var (
-	str = []byte("Hello world!")
+	str    = []byte("Hello world!")
 	strHex = "48656c6c6f20776f726c6421"
 )
 
@@ -28,7 +28,7 @@ func TestEncodedLen(t *testing.T) {
 	log.Printf("srccode(%T) = %v\n", str, str)
 }
 
-func TestDecodedLen(t *testing.T)  {
+func TestDecodedLen(t *testing.T) {
 	// hex.DecodedLen(len(dstEncode)) 返回值实际是len(dstEncode) 长度一半
 	lenStrHex := len(strHex)
 	lenStrDecode := hex.DecodedLen(lenStrHex)
@@ -36,10 +36,7 @@ func TestDecodedLen(t *testing.T)  {
 	assert.Equal(t, lenStrDecode, 12)
 }
 
-
 func TestEncodeAndDecode(t *testing.T) {
-	str := []byte("Hello world!")
-
 	lenEncode := hex.EncodedLen(len(str))
 
 	// hex.Encode: 转为对应16进制的字符串
@@ -71,9 +68,6 @@ func TestEncodeStringAndDecodeString(t *testing.T) {
 
 }
 
-
-
-
 func TestDump(t *testing.T) {
 	content := []byte("Go is an open source programming language.")
 	// 转储返回一个包含给定数据的十六进制转储的字符串。十六进制转储的格式与hexdump -C命令行上的输出相匹配
@@ -93,5 +87,3 @@ func TestDump(t *testing.T) {
 		stdoutDumper.Write([]byte(line))
 	}
 }
-
-

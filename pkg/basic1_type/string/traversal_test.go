@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"testing"
 )
 
-func main() {
+func TestDemo(t *testing.T) {
 	str := "abcdefghiHello,世界"
 	fmt.Println("Utf-8遍历")
 	for i := 0; i < len(str); i++ {
