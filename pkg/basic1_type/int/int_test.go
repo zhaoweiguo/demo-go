@@ -12,13 +12,14 @@ func init() {
 }
 
 func TestInt(t *testing.T) {
-	a := 100 * 23 / 79
-	log.Printf("a: %d\n", a)
+	a := 100 / 3
+	log.Printf("a: %d\n", a) // 33
+
 }
 
 func TestLen(t *testing.T) {
 	var a uint32 = 12
-	log.Println(unsafe.Sizeof(a))
-	log.Println(binary.Size(a))
+	log.Println(unsafe.Sizeof(a)) // 4
+	log.Println(binary.Size(a))   // 4
 
 }

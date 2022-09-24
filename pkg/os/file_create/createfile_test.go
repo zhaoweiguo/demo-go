@@ -1,11 +1,12 @@
-package file
+package file_create
 
 import (
 	"log"
 	"os"
+	"testing"
 )
 
-func createFolderIfNotExists() {
+func TestCreateFolderIfNotExists(t *testing.T) {
 	resultsPath := "./folder/"
 
 	if _, err := os.Stat(resultsPath); os.IsNotExist(err) {

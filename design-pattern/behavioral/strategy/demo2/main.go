@@ -54,6 +54,10 @@ func (operator *Operator) marshal(content interface{}) string {
 	return operator.strategy.do(content)
 }
 
+func init() {
+	log.SetFlags(log.Llongfile)
+}
+
 func main() {
 	operator := Operator{}
 	rectangle := Rectangle{10, 20}

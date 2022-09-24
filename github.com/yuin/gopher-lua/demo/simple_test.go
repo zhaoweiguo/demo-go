@@ -10,11 +10,11 @@ var (
 	L *lua.LState
 )
 
-func init()  {
+func init() {
 	L = lua.NewState()
 }
 
-func TestNormal(t *testing.T)  {
+func TestNormal(t *testing.T) {
 	defer L.Close()
 	if err := L.DoString(`print("hello")`); err != nil {
 		panic(err)
@@ -33,14 +33,3 @@ func TestString(t *testing.T) {
 		panic("string required.")
 	}
 }
-
-func TestFile(t *testing.T)  {
-	defer L.Close()
-	if err := L.DoFile("hello.lua"); err != nil {
-		panic(err)
-	}
-}
-
-
-
-

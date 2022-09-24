@@ -3,24 +3,9 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
-	"strings"
 )
 
 func main() {
-
-	data, err := ioutil.ReadFile("./city.txt")
-	if err != nil {
-		panic(err.Error())
-	}
-
-	citys := strings.Split(string(data), "--")
-
-	for _, city := range citys {
-		if city == "" {
-			continue
-		}
-		fmt.Println(city)
-	}
 
 	fmt.Println("=======================")
 	dirs, err := ioutil.ReadDir(".") // 获得指定目录下的文件列表

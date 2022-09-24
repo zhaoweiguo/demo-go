@@ -1,9 +1,15 @@
 package uuid
 
 import (
-	"crypto/rand"
 	"fmt"
+	"math/rand"
+	"testing"
 )
+
+func TestGenerateUUID(t *testing.T) {
+	uuid := generateUUID()
+	t.Log(uuid)
+}
 
 func generateUUID() string {
 	var entropy = make([]byte, 16)

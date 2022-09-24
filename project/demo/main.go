@@ -3,17 +3,17 @@ package main
 import (
 	"encoding/json"
 	"github.com/gin-gonic/gin"
-	"github.com/zhaoweiguo/demo-go/pkg/net/http/demo/db"
+	db2 "github.com/zhaoweiguo/demo-go/project/demo/db"
 	"log"
 )
 
 const InnerServer = "Server suffers an error"
 
-func main()  {
+func main() {
 	host := ""
 	dbname := "video"
 	table := "video"
-	db.Conn(host, dbname, table)
+	db2.Conn(host, dbname, table)
 	router := gin.Default()
 	router.GET("/v1.0/video/list", getVideoList)
 	router.POST("/v1.0/video", addVideo)
@@ -21,10 +21,9 @@ func main()  {
 	router.DELETE("/v1.0/video", deleteVideo)
 }
 
-
 func getVideoList(c *gin.Context) {
 	userName := c.GetString("user_name")
-	video := db.New(userName, "", "")
+	video := db2.New(userName, "", "")
 	list := video.GetVideoList()
 	jsonList, err := json.Marshal(list)
 	if err != nil {
@@ -39,7 +38,7 @@ func addVideo(c *gin.Context) {
 	videoName := c.GetString("video_name")
 	videoType := c.GetString("video_type")
 
-	video := db.New(userName, videoType, videoName)
+	video := db2.New(userName, videoType, videoName)
 	isSuccess := video.AddVideo()
 	if isSuccess != true {
 		returnErrResponse(c, InnerServer)
@@ -50,26 +49,25 @@ func updateVideo(c *gin.Context) {
 	id := c.GetInt("id")
 
 	videoName := c.GetString("video_name")
-	video := db.GetVideo(id)
+	video := db2.GetVideo(id)
 	video.SetVideoName(videoName)
 	returnSuccResponse(c, []byte("success"))
 }
 
 func deleteVideo(c *gin.Context) {
 	id := c.GetInt("id")
-	video := db.GetVideo(id)
+	video := db2.GetVideo(id)
 	video.DelVideo()
 	returnSuccResponse(c, []byte("success"))
 }
 
-
 // ============
 // inner func
 // ============
-func returnErrResponse(c *gin.Context, msg string)  {
+func returnErrResponse(c *gin.Context, msg string) {
 	c.JSON(200, gin.H{"msg": msg})
 }
 
-func returnSuccResponse(c *gin.Context, msg []byte)  {
-	c.JSON(200, gin.H{"code" : 200, "msg" : string(msg)})
+func returnSuccResponse(c *gin.Context, msg []byte) {
+	c.JSON(200, gin.H{"code": 200, "msg": string(msg)})
 }
