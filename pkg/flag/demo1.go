@@ -5,12 +5,13 @@ import (
 	"fmt"
 )
 
-// go run demo1_simple.go --param1 param1 --param2 param2
+var (
+	param1 = flag.String("param1", "1111", "参数1")
+	param2 = flag.String("param2", "value2", "参数2")
+)
+
+// go run demo1.go --param1 param1 --param2 param2
 func main() {
-	var (
-		param1 = flag.String("param1", "1111", "参数1")
-		param2 = flag.String("param2", "value2", "参数2")
-	)
 	// 解析前为默认值
 	fmt.Println(">> 解析前")
 	fmt.Printf("param1:%s\n", *param1)

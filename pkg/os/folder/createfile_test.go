@@ -1,4 +1,4 @@
-package file_create
+package folder
 
 import (
 	"log"

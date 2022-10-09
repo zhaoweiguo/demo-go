@@ -1,11 +1,12 @@
-package main
+package ioutil
 
 import (
 	"fmt"
 	"io/ioutil"
+	"testing"
 )
 
-func main() {
+func TestNormal(t *testing.T) {
 
 	fmt.Println("=======================")
 	dirs, err := ioutil.ReadDir(".") // 获得指定目录下的文件列表

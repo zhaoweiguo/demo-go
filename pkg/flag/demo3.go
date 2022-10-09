@@ -13,7 +13,7 @@ func main() {
 
 	var infile *string = flag.String("i", "defaultfile", "File contains values for sorting")
 	var port2 *int = flag.Int("port2", 88, "other port")
-	fmt.Println(*port2)
+	fmt.Println(*port2) // 88
 
 	flag.IntVar(&port, "port", 80, "help for port")
 
@@ -26,7 +26,7 @@ func main() {
 
 	fmt.Println(*infile) // abc.html
 	fmt.Println(port)    //8000
-	fmt.Println(*port2)  //8000
+	fmt.Println(*port2)  //7000
 
 	fmt.Println(flag.Args()) //[enable remote]
 	fmt.Println(flag.Arg(0)) // enable
