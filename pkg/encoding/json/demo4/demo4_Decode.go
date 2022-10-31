@@ -3,7 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/prometheus/common/log"
+	"log"
 	"os"
 )
 
@@ -20,7 +20,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	log.Info(cfg.Steps[1].Docker.Command)
+	log.Println(cfg.Steps[1].Docker.Command)
 }
 
 type (

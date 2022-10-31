@@ -8,7 +8,7 @@ import (
 )
 
 var host = flag.String("host", "localhost", "host")
-var port = flag.String("port", "3737", "port")
+var port = flag.String("port", "3738", "port")
 
 func init() {
 	log.SetFlags(log.Ltime | log.Lshortfile)

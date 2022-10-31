@@ -12,8 +12,8 @@ func init() {
 }
 
 func main() {
-	host := "127.0.0.1"
-	port := 3738
+	host := "255.255.255.255"
+	port := 3737
 	addr, err := net.ResolveUDPAddr("udp", fmt.Sprintf("%s:%v", host, port))
 	if err != nil {
 		log.Panic(err)
@@ -25,12 +25,6 @@ func main() {
 	}
 	defer conn.Close()
 
-	_, err = conn.Write([]byte(""))
-	if err != nil {
-		log.Panic(err)
-	}
-
-	data := make([]byte, 40)
 	//_, err = conn.Read(data)
 	//if err != nil {
 	//	log.Panic(err)
@@ -38,25 +32,28 @@ func main() {
 
 	//t := binary.BigEndian.Uint32(data)
 	//log.Println(time.Unix(int64(t), 0).String())
-	go read(conn)
+	go write(conn)
+	time.Sleep(time.Millisecond * 10)
 	for {
-		_, err = conn.Read(data)
+		data := make([]byte, 40)
+		log.Println("---------")
+		_, addr1, err := conn.ReadFromUDP(data)
 		if err != nil {
 			log.Panic(err)
 		}
-		log.Println(string(data))
-
+		log.Println(string(data), addr1)
 	}
 	//os.Exit(0)
 
 }
 
-func read(conn *net.UDPConn) {
+func write(conn *net.UDPConn) {
 	for {
 		_, err := conn.Write([]byte("111"))
 		if err != nil {
 			log.Panic(err)
 		}
-		time.Sleep(10 * time.Second)
+		log.Println("=========================")
+		time.Sleep(30 * time.Second)
 	}
 }

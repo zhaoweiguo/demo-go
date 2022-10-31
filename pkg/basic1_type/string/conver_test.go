@@ -3,15 +3,20 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"testing"
 )
 
-func main() {
-	convertAscII()
-	stringToInt()
-	intToString()
+func TestIntToString(t *testing.T) {
+	fmt.Println()
+	fmt.Println("====start intToString()....")
+	a := 12345
+	b := fmt.Sprintf("str_%d", a)
+	fmt.Println(b)
+	fmt.Println("====end int to string....")
 }
 
-func stringToInt() {
+
+func TestStringToInt(t *testing.T) {
 	fmt.Println()
 	fmt.Println("====start stringToInt()....")
 	a := "12345"
@@ -25,16 +30,8 @@ func stringToInt() {
 	fmt.Println("====end string to int....")
 }
 
-func intToString() {
-	fmt.Println()
-	fmt.Println("====start intToString()....")
-	a := 12345
-	b := fmt.Sprintf("str_%d", a)
-	fmt.Println(b)
-	fmt.Println("====end int to string....")
-}
 
-func convertAscII() {
+func TestConvertAscII(t *testing.T) {
 	fmt.Println()
 	fmt.Println("====start convertAscII()....")
 	// 把ascII码转为字符
@@ -45,3 +42,6 @@ func convertAscII() {
 	}
 	fmt.Println("====end convertAscII....")
 }
+
+
+

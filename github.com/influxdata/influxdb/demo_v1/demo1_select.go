@@ -5,16 +5,11 @@ import (
 	"log"
 )
 
-const (
-	MyDB = "dev"
-	username = "gordon"
-	password = "1QAZ2wsx"
-)
 
 func queryDB(clnt client.Client, cmd string) (res []client.Result, err error) {
 	q := client.Query{
 		Command:  cmd,
-		Database: MyDB,
+		Database: db,
 	}
 	if response, err := clnt.Query(q); err == nil {
 		if response.Error() != nil {
@@ -28,9 +23,9 @@ func queryDB(clnt client.Client, cmd string) (res []client.Result, err error) {
 }
 
 
-func main()  {
+func query()  {
 	con, err := client.NewHTTPClient(client.HTTPConfig{
-		Addr:     "https://ts-bp16723l95rwey7a2.influxdata.rds.aliyuncs.com:3242",
+		Addr:     host1,
 		Username: username,
 		Password: password,
 	})
@@ -40,14 +35,12 @@ func main()  {
 	defer con.Close()
 
 	q := client.Query{
-		Command:  "select count(*) from user_line2",
-		Database: MyDB,
+		Command:  "select count(*) from user_line",
+		Database: db,
 	}
 	if response, err := con.Query(q); err == nil && response.Error() == nil {
 		log.Println(response.Results)
 	}
-
-
 
 }
 

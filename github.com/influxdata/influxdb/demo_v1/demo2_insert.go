@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/influxdata/influxdb/client"
 	"log"
 	"math/rand"
@@ -10,17 +9,15 @@ import (
 	"time"
 )
 
-func main()  {
-	host1 := "ts-bp16723l95rwey7a2.influxdata.rds.aliyuncs.com"
-	port1 := 3242
-	host, err := url.Parse(fmt.Sprintf("https://%s:%d", host1, port1))
+
+
+func insert()  {
+	host, err := url.Parse(host1)
 	if err != nil {
 		log.Fatal(err)
 	}
 	con, err := client.NewClient(client.Config{
 		URL: *host,
-		Username: "gordon",
-		Password: "1QAZ2wsx",
 	})
 	if err != nil {
 		log.Fatal(err)
@@ -50,7 +47,7 @@ func main()  {
 
 	bps := client.BatchPoints{
 		Points:          pts,
-		Database:        "dev",
+		Database:        db,
 		//RetentionPolicy: "default",
 	}
 

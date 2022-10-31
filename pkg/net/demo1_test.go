@@ -1,11 +1,12 @@
-package main
+package net
 
 import (
 	"log"
 	"net"
+	"testing"
 )
 
-func main() {
+func TestDial(t *testing.T) {
 	//conn, error := net.Dial("tcp", "192.168.0.1:8080")    // tcp请求
 	//conn, error := net.Dial("udp", "192.168.0.1:8090")    // udp请求
 	conn, error := net.Dial("ip4:icmp", "www.baidu.com") // icmp链接（使用协议名称）

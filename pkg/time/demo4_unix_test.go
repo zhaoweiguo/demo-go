@@ -25,6 +25,15 @@ func TestUnix(tt *testing.T) {
 
 }
 
+
+func TestTimeStamp(t *testing.T) {
+	date := time.Now() // 2014-07-02 17:35:39.605631353 +0800 CST
+	// 时间戳
+	d := date.Unix() // unix时间戳
+	fmt.Printf("d:%v\n", d)
+}
+
+
 func TestUnixNano(t *testing.T) {
 	now := time.Now().UnixNano() / int64(time.Millisecond)
 	log.Println(now)
