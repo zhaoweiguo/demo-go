@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-var host = flag.String("host", "localhost", "host")
+var host = flag.String("host", "0.0.0.0", "host")
 var port = flag.String("port", "3738", "port")
 
 func init() {
