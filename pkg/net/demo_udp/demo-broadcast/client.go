@@ -13,6 +13,7 @@ func init() {
 func main() {
 	//local address
 	la, err := net.ResolveUDPAddr("udp4", "0.0.0.0:3738")
+	// remote broad address
 	ra, err := net.ResolveUDPAddr("udp", "192.168.95.255:3737")
 
 	// listen
