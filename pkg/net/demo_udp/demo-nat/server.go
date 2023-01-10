@@ -29,7 +29,7 @@ func main() {
 	}
 	defer c.Close()
 
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 5; i++ {
 		// write(指定 addr 的 write)
 		n, err := c.WriteTo([]byte("111"), ra)
 		if err != nil {
@@ -43,7 +43,7 @@ func main() {
 		// read
 		data := make([]byte, 4096)
 		n, addr, err := c.ReadFromUDP(data)
-		log.Println("reading start=========================", n)
+		log.Println("[", i, "]reading start=========================", n)
 		log.Println(n, err, "[", addr, "]> message: ", string(data))
 		//log.Println("reading end=========================", n)
 
