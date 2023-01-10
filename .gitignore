@@ -4,3 +4,4 @@ go.sum
 .vscode
 demo-go
 core.sqlite
+/github.com/getsentry/sentry-go/sentry-go
