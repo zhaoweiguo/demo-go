@@ -6,12 +6,11 @@ import (
 	"testing"
 )
 
-func TestDemo1(t *testing.T) {
+func TestFindStringSubmatchIndex(t *testing.T) {
 	re, _ := regexp.Compile("a(x*)b(y*)c")
 	str := "axxbyyyccc   axxbyycc"
-	matchonestr := "aaaaaaxxbdsafdsc"
+	matchonestr := "aaaaaaxxbycdsafdsc"
 	notmatchstr := "not match"
-	index := -1
 
 	// 得到从左数第一个匹配相关
 	// 1. 前面2个数为匹配成功的下标
@@ -20,8 +19,13 @@ func TestDemo1(t *testing.T) {
 	fmt.Printf("rtn1:%v\n", rtn1)
 	notmatchrtn1 := re.FindStringSubmatchIndex(notmatchstr) // []
 	fmt.Printf("not match rtn1:%v\n", notmatchrtn1)
-	matchonertn1 := re.FindStringSubmatchIndex(matchonestr) // []
+	matchonertn1 := re.FindStringSubmatchIndex(matchonestr) // [5 11 6 8 9 10]
 	fmt.Printf("match once rtn1:%v\n", matchonertn1)
+}
+
+func TestFindStringXXX(t *testing.T) {
+	re, _ := regexp.Compile("a(x*)b(y*)c")
+	str := "axxbyyyccc   axxbyycc"
 
 	rtn2 := re.FindStringSubmatch(str)
 	fmt.Printf("rtn2:%v\n", rtn2) // rtn2:[axxbyyyc xx yyy]
@@ -29,7 +33,12 @@ func TestDemo1(t *testing.T) {
 	fmt.Printf("rtn3:%v\n", rtn3) // rtn3:[0 8]
 	rtn4 := re.FindString(str)
 	fmt.Printf("rtn4:%v\n", rtn4) // rtn4:axxbyyyc
+}
 
+func TestFindAllStringXXX(t *testing.T) {
+	re, _ := regexp.Compile("a(x*)b(y*)c")
+	str := "axxbyyyccc   axxbyycc"
+	index := -1
 	// 得到匹配的全部
 	// index为取第几个匹配, 为-1时得全部的
 	rtn5 := re.FindAllStringSubmatchIndex(str, index) // [[0 8 1 3 4 7] [13 20 14 16 17 19]]
@@ -40,5 +49,4 @@ func TestDemo1(t *testing.T) {
 	fmt.Printf("rtn7:%v\n", rtn7)
 	rtn8 := re.FindAllString(str, index) // [axxbyyyc axxbyyc]
 	fmt.Printf("rtn8:%v\n", rtn8)
-
 }

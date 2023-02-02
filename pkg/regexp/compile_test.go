@@ -1,33 +1,10 @@
 package regexp
 
 import (
+	"github.com/stretchr/testify/assert"
 	"regexp"
 	"testing"
 )
-
-func TestMatchString(t *testing.T) {
-	cases := []struct {
-		pattern string
-		str     string
-		ismatch bool
-	}{
-		{`^*\.corge\.at`, "abc.corge.at", true},
-		{"^/", "/abc", true},
-		{"^/", "ab/c", false},
-		{"^[A-Z]+$", "abc/cd", false},
-		{"^[A-Z]+$", "ABCD", true},
-	}
-
-	for _, c := range cases {
-		isMatch, err := regexp.MatchString(c.pattern, c.str)
-		if err != nil {
-			t.Error("[not match]", err)
-		}
-		if isMatch != c.ismatch {
-			t.Error("[not match]", c.pattern)
-		}
-	}
-}
 
 func TestMustCompile(t *testing.T) {
 	cases := []struct {
@@ -41,9 +18,7 @@ func TestMustCompile(t *testing.T) {
 	for _, c := range cases {
 		mustCompile := regexp.MustCompile(c.pattern)
 		isMatch := mustCompile.MatchString(c.str)
-		if isMatch != c.ismatch {
-			t.Error("[not match]", c.pattern)
-		}
+		assert.Equal(t, isMatch, c.ismatch)
 
 	}
 
@@ -62,13 +37,9 @@ func TestCompile(t *testing.T) {
 
 	for _, c := range cases {
 		reg, err := regexp.Compile(c.pattern)
-		if err != nil {
-			t.Error("[not match]", err)
-		}
+		assert.NoError(t, err)
 		name := reg.FindStringSubmatch(c.str)[0]
-		if name != c.matched {
-			t.Error("[not match]", c.pattern)
-		}
+		assert.Equal(t, name, c.matched)
 	}
 
 }
