@@ -5,3 +5,4 @@ go.sum
 demo-go
 core.sqlite
 /github.com/getsentry/sentry-go/sentry-go
+ignore.txt
