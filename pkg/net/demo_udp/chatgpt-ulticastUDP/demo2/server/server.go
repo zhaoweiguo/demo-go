@@ -6,11 +6,11 @@ import (
 )
 
 const (
-	mdnsAddr = "224.0.0.251:5353"
+	serverAddr = "239.0.0.251:8888"
 )
 
 func main() {
-	addr, err := net.ResolveUDPAddr("udp", mdnsAddr)
+	addr, err := net.ResolveUDPAddr("udp", serverAddr)
 	if err != nil {
 		fmt.Println("Failed to resolve address:", err)
 		return
@@ -24,6 +24,7 @@ func main() {
 	defer conn.Close()
 
 	for {
+		fmt.Println("================start........")
 		b := make([]byte, 1024)
 		n, src, err := conn.ReadFromUDP(b)
 		if err != nil {
@@ -39,5 +40,6 @@ func main() {
 			fmt.Println("Failed to write:", err)
 			continue
 		}
+		fmt.Println("================done........")
 	}
 }
