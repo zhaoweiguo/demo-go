@@ -11,7 +11,7 @@ import (
 func TestAfter(t *testing.T) {
 	date1 := time.Now().Add(time.Second)
 	assert.Equal(t, time.Now().After(date1), false)
-	time.Sleep(time.Second*2)
+	time.Sleep(time.Second * 2)
 	assert.Equal(t, time.Now().After(date1), true)
 }
 
@@ -39,4 +39,8 @@ func TestSetDate2(t *testing.T) {
 	date := time.Date(2012, 3, 4, 5, 6, 7, 0, time.UTC)
 	strD := date.Format("2006年01月02日03时04分05秒")
 	fmt.Printf("%v\n", strD)
+}
+
+func TestNormal(t *testing.T) {
+	log.Println(time.Now().Hour())
 }
