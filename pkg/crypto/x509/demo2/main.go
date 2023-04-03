@@ -10,8 +10,8 @@ import (
 
 // @todo
 func main() {
-	path := "./pkg/crypto/x509/demo2/id_rsa"
-	path2 := "./pkg/crypto/x509/demo2/pem"
+	path := "./pkg/crypto/x509/demo2_user/id_rsa"
+	path2 := "./pkg/crypto/x509/demo2_user/pem"
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
 		log.Panic(err)

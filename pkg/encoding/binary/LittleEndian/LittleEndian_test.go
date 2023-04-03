@@ -20,11 +20,11 @@ func TestLittleEndian(t *testing.T) {
 		want []byte
 	}{
 		{"demo1", 1, []byte{1, 0}},
-		{"demo2", 16, []byte{16, 0}},
-		{"demo2", 128, []byte{128, 0}},
-		{"demo2", 255, []byte{255, 0}},
-		{"demo2", 256, []byte{0, 1}},
-		{"demo2", 65535, []byte{255, 255}},
+		{"demo2_user", 16, []byte{16, 0}},
+		{"demo2_user", 128, []byte{128, 0}},
+		{"demo2_user", 255, []byte{255, 0}},
+		{"demo2_user", 256, []byte{0, 1}},
+		{"demo2_user", 65535, []byte{255, 255}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

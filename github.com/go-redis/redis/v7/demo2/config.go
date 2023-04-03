@@ -13,7 +13,7 @@ var Config = struct {
 
 func init() {
 	SetFlags(Ldate | Lshortfile)
-	err := configor.Load(&Config, "./github.com/go-redis/redis/v7/demo2/conf/config.yml") // 注意这儿是相对整个项目的目录地址
+	err := configor.Load(&Config, "./github.com/go-redis/redis/v7/demo2_user/conf/config.yml") // 注意这儿是相对整个项目的目录地址
 	if err != nil {
 		Println(err)
 	}

@@ -18,7 +18,7 @@ func TestDemo(t *testing.T) {
 		want string
 	}{
 		{"demo1", O{A: "a", B: "b"}, "<O><A>a</A><B>b</B></O>"},
-		{"demo2", map[string]string{"a": "1", "b": "2"}, ""},
+		{"demo2_user", map[string]string{"a": "1", "b": "2"}, ""},
 	}
 
 	for _, tt := range tests {

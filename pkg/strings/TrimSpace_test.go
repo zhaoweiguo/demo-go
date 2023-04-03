@@ -13,8 +13,8 @@ func TestTrimSpace(t *testing.T) {
 		want  string
 	}{
 		{"demo1", "aaaa", "aaaa"},
-		{"demo2", "    aaaa", "aaaa"},
-		{"demo2", "\t\n  aaaa", "aaaa"},
+		{"demo2_user", "    aaaa", "aaaa"},
+		{"demo2_user", "\t\n  aaaa", "aaaa"},
 	}
 
 	for _, tt := range tests {

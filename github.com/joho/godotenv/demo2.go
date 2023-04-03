@@ -7,14 +7,14 @@ import (
 )
 
 // 用法:
-// $> go build demo2.go
-// $> ./demo2
+// $> go build demo2_user.go
+// $> ./demo2_user
 // 2019/09/19 12:03:27
 // 2019/09/19 11:59:32 another_YOURS3BUCKET another_YOURSECRETKEYGOESHERE
-// $> S3_BUCKET=help ./demo2
+// $> S3_BUCKET=help ./demo2_user
 // 2019/09/19 12:02:35 help
 // 2019/09/19 12:00:21 help another_YOURSECRETKEYGOESHERE
-// $> S3_BUCKET=help SECRET_KEY=hello ./demo2
+// $> S3_BUCKET=help SECRET_KEY=hello ./demo2_user
 // 2019/09/19 12:01:18 help hello
 // 2019/09/19 12:01:18 help hello
 func main() {

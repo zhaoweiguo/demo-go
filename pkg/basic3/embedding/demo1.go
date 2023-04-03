@@ -20,7 +20,7 @@ func demo1() {
 
 // 内部类型user有一个sayHello方法，外部类型对其进行了覆盖，同名重写sayHello
 func demo2() {
-	fmt.Println("===demo2============================")
+	fmt.Println("===demo2_user============================")
 	ad := admin{user{"张三", "zhangsan@flysnow.org"}, "管理员"}
 	ad.user.sayHello()
 	ad.sayHello() // 外部类型对其进行了覆盖，同名重写sayHello

@@ -32,7 +32,7 @@ func TestDemo1(t *testing.T) {
 
 // 对文件加密
 func TestDemo2(t *testing.T) {
-	log.Println("===demo2============================")
+	log.Println("===demo2_user============================")
 	f, err := os.Open("pkg/crypto/sha256/input.txt")
 	if err != nil {
 		log.Fatal(err)

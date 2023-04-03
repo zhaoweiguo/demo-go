@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-// go run demo2.go param1 param2
+// go run demo2_user.go param1 param2
 func main() {
 
 	cmdline := os.Args[1:]

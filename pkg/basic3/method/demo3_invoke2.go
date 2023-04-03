@@ -31,7 +31,7 @@ func demo1_invoke2() {
 }
 
 func demo2_invoke2() {
-	fmt.Println("===demo2============================")
+	fmt.Println("===demo2_user============================")
 	var c cat_point
 
 	//invoke(c)		// 报错: Cannot use 'c' (type cat_point) as type animal2

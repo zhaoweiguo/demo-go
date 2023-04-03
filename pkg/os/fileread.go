@@ -49,7 +49,7 @@ func demo1() {
 }
 
 func demo2() {
-	fmt.Println("demo2 start=====================")
+	fmt.Println("demo2_user start=====================")
 	folder := "/tmp"
 	fi, err := os.Stat(folder)
 	fmt.Println(err, fi.IsDir(), fi.Name())

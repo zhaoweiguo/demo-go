@@ -1,6 +1,6 @@
 package main
 
-import(
+import (
 	"fmt"
 	"github.com/BurntSushi/toml"
 )
@@ -18,7 +18,7 @@ type struct3 struct {
 
 func main() {
 	var config struct1
-	if _, err := toml.DecodeFile("./demo2.toml", &config); err != nil {
+	if _, err := toml.DecodeFile("./demo2_user.toml", &config); err != nil {
 		fmt.Println(err)
 		return
 	}

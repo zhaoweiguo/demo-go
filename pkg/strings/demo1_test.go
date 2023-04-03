@@ -32,7 +32,7 @@ func TestIndex(t *testing.T) {
 		want int
 	}{
 		{"demo1", args{"abcdef", "cd"}, 2},
-		{"demo2", args{"abcdef", "abc"}, 0},
+		{"demo2_user", args{"abcdef", "abc"}, 0},
 	}
 
 	for _, tt := range tests {

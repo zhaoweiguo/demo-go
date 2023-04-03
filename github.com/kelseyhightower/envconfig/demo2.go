@@ -8,7 +8,7 @@ import (
 /*
 from: github.com/drone/drone
 使用:  @todo
-	DRONE_USER_CREATE=username:zhaoweiguo,admin:true ./demo2
+	DRONE_USER_CREATE=username:zhaoweiguo,admin:true ./demo2_user
 */
 func main() {
 	user := Users{}

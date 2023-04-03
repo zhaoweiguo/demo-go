@@ -1,5 +1,5 @@
 /*
-这部分代码 Strategy 模式实现方案: ../../strategy/demo2
+这部分代码 Strategy 模式实现方案: ../../strategy/demo2_user
 */
 package main
 

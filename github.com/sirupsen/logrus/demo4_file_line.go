@@ -23,7 +23,7 @@ func demo1() {
 
 func demo2_text_format() {
 	log := logrus.New()
-	log.Println("==demo2=============================")
+	log.Println("==demo2_user=============================")
 	log.SetReportCaller(true)
 	log.SetFormatter(&logrus.TextFormatter{
 		CallerPrettyfier: func(f *runtime.Frame) (string, string) {
@@ -39,7 +39,7 @@ func demo2_text_format() {
 
 func demo2_text_format2() {
 	log := logrus.New()
-	log.Println("==demo2, 1=============================")
+	log.Println("==demo2_user, 1=============================")
 	logrus.SetFormatter(&logrus.JSONFormatter{
 		PrettyPrint: true,
 	})

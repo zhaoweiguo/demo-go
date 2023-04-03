@@ -1,4 +1,4 @@
-//go:generate mockgen -destination mock_user/mock_user.go github.com/zhaoweiguo/demo-go/golang.org/mock/demo2 Index,Embed,Embedded
+//go:generate mockgen -destination mock_user/mock_user.go github.com/zhaoweiguo/demo-go/golang.org/mock/demo2_user Index,Embed,Embedded
 
 // An example package with an interface.
 package demo2

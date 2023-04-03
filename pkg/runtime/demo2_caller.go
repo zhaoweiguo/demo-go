@@ -31,12 +31,12 @@ func demo1_Caller() {
 }
 
 func demo2_Callers() {
-	log.Println("==demo2 start===================================")
+	log.Println("==demo2_user start===================================")
 	pcs := make([]uintptr, 2)
 	_ = runtime.Callers(0, pcs)
 	fun := runtime.FuncForPC(pcs[1])
 	log.Println(fun.Name(), fun.Entry())
-	log.Println("==demo2 end===================================")
+	log.Println("==demo2_user end===================================")
 }
 
 func demo3() {

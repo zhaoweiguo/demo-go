@@ -17,7 +17,7 @@ func demo1() {
 }
 
 func demo2() {
-	fmt.Println("===demo2============================")
+	fmt.Println("===demo2_user============================")
 	p := person2{name: "张三"}
 	(&p).modify() //指针接收者，修改有效
 	fmt.Println((&p).String())
