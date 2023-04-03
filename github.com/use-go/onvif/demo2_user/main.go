@@ -22,7 +22,9 @@ func main() {
 	}
 	dev, err := onvif.NewDevice(param)
 	log.Println(dev, err)
-	res, err := dev.CallMethod(device.GetUsers{})
+
+	data := device.GetUsers{}
+	res, err := dev.CallMethod(data)
 	bs, _ := ioutil.ReadAll(res.Body)
 	log.Printf("output %+v %s", res.StatusCode, bs)
 

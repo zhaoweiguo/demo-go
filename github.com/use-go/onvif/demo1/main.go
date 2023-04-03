@@ -8,6 +8,7 @@ import (
 	"regexp"
 
 	"github.com/use-go/onvif"
+	"github.com/use-go/onvif/device"
 )
 
 func init() {
@@ -30,9 +31,9 @@ func newCamera(addr string) {
 	newCall(dev)
 }
 
-func newCall(device *onvif.Device) {
-	data := GetDeviceInformation{}
-	resp, err := device.CallMethod(data)
+func newCall(dev *onvif.Device) {
+	data := device.GetDeviceInformation{}
+	resp, err := dev.CallMethod(data)
 	if err != nil {
 		log.Println(err)
 		return
