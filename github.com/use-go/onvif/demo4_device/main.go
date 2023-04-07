@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/use-go/onvif"
-	"github.com/use-go/onvif/media"
+	"github.com/use-go/onvif/device"
 )
 
 func init() {
@@ -25,20 +25,17 @@ func main() {
 }
 
 func newCall(dev *onvif.Device) {
-	//data := media.GetMetadataConfigurationOptions{}
-	//data := media.GetVideoSources{}
-	data := media.GetStreamUri{}
-	//data := media.GetStreamUri{
-	//	StreamSetup: onvid.StreamSetup{
-	//		Stream: "RTP-Unicast",
-	//		Transport: onvid.Transport{
-	//			Protocol: "RTSP",
-	//			Tunnel:   nil,
-	//		},
-	//	},
-	//	ProfileToken: onvid.ReferenceToken(),
-	//}
-	//data := media.GetProfiles{}
+	//data := device.GetSystemUris{} // Method 'tds:GetSystemUris' not implemented: method name or namespace not recognized
+	data := device.GetServices{}
+	//data := device.GetServiceCapabilities{}
+	//data := device.GetDiscoveryMode{}
+	//data := device.GetDeviceInformation{}
+	//data := device.GetSystemDateAndTime{}
+	//data := device.GetCapabilities{Category: "All"}
+	//data := ptz.GetServiceCapabilities{}
+
+	//data := device.GetNetworkProtocols{}
+	//data := device.GetNetworkInterfaces{}
 	resp, err := dev.CallMethod(data)
 	if err != nil {
 		log.Println(err)
@@ -48,6 +45,12 @@ func newCall(dev *onvif.Device) {
 
 	if resp.StatusCode != http.StatusOK {
 		log.Println("======:", resp.StatusCode)
+		body, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+		log.Println(string(body))
 		return
 	}
 	body, err := ioutil.ReadAll(resp.Body)
