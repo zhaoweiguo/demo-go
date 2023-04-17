@@ -13,7 +13,7 @@ import (
 func Init(service string) (opentracing.Tracer, io.Closer) {
 	cfg := &config.Configuration{
 		Sampler: &config.SamplerConfig{
-			Type:  "const",
+			Type:  "utils",
 			Param: 1,
 		},
 		Reporter: &config.ReporterConfig{

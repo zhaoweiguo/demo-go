@@ -8,7 +8,12 @@ import (
 	"github.com/use-go/onvif"
 	"github.com/use-go/onvif/media"
 	onvid "github.com/use-go/onvif/xsd/onvif"
+	"github.com/zhaoweiguo/demo-go/github.com/use-go/onvif/utils"
 )
+
+/*
+说明: 这儿直接使用onvif的结构体，有问题
+*/
 
 func init() {
 	log.SetFlags(log.Lshortfile | log.Ltime)
@@ -16,10 +21,9 @@ func init() {
 
 func main() {
 	param := onvif.DeviceParams{
-		//Xaddr:    "192.168.124.58:8899",
-		Xaddr:    "192.168.124.71:80",
-		Username: "admin",
-		Password: "admin123",
+		Xaddr:    utils.Addr,
+		Username: utils.Username,
+		Password: utils.Password,
 	}
 	dev, err := onvif.NewDevice(param)
 	log.Println(dev, err)
@@ -29,15 +33,14 @@ func main() {
 func getStreamUri() media.GetStreamUri {
 	return media.GetStreamUri{
 		StreamSetup: onvid.StreamSetup{
-			Stream: "RTP-Unicast",
+			Stream: utils.Stream,
 			Transport: onvid.Transport{
-				Protocol: "RTSP",
+				Protocol: utils.Protocol,
 				//Protocol: "UDP",
 				Tunnel: nil,
 			},
 		},
-		ProfileToken: onvid.ReferenceToken("profile_1"),
-		//ProfileToken: onvid.ReferenceToken("000"),
+		ProfileToken: utils.Token,
 	}
 }
 

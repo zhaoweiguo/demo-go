@@ -7,6 +7,7 @@ import (
 
 	"github.com/use-go/onvif"
 	"github.com/use-go/onvif/device"
+	"github.com/zhaoweiguo/demo-go/github.com/use-go/onvif/utils"
 )
 
 func init() {
@@ -15,9 +16,9 @@ func init() {
 
 func main() {
 	param := onvif.DeviceParams{
-		Xaddr:    "192.168.124.58:8899",
-		Username: "admin",
-		Password: "admin123",
+		Xaddr:    utils.Addr,
+		Username: utils.Username,
+		Password: utils.Password,
 	}
 	dev, err := onvif.NewDevice(param)
 	log.Println(dev, err)
