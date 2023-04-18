@@ -98,12 +98,12 @@ func main() {
 		}
 	}()
 
-	// 临时测试一下主动关闭 client session
-	//go func() {
-	//	time.Sleep(5 * time.Second)
-	//	err := pullSession.Dispose()
-	//	nazalog.Debugf("< session Dispose. err=%+v", err)
-	//}()
+	//临时测试一下主动关闭 client session
+	go func() {
+		time.Sleep(5 * time.Second)
+		err := pullSession.Dispose()
+		nazalog.Debugf("< session Dispose. err=%+v", err)
+	}()
 
 	err = <-pullSession.WaitChan()
 	nazalog.Infof("< pullSession.Wait(). err=%+v", err)
