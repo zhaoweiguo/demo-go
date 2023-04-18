@@ -28,34 +28,10 @@ func main() {
 	newCall(dev)
 }
 
-func getStreamUri() media.GetStreamUri {
-	return media.GetStreamUri{
-		StreamSetup: media.StreamSetup{
-			Stream: utils.Stream,
-			Transport: media.Transport{
-				Protocol: utils.Protocol,
-				Tunnel:   nil,
-			},
-		},
-		ProfileToken: utils.Token,
-	}
-}
-
 func newCall(dev *onvif.Device) {
-	//data := media.GetMetadataConfigurationOptions{}
-	//data := media.GetVideoSources{}
-	//data := media.GetStreamUri{}
 
-	//data := media.GetVideoEncoderConfiguration{ConfigurationToken: onvid.ReferenceToken("ve000")}
-	//data := media.GetVideoEncoderConfigurations{}
-
-	//data := media.GetServiceCapabilities{} // Method 'trt:GetServiceCapabilities' not implemented: method name or namespace not recognized
-
-	//data := media.GetProfiles{}
-	data := getStreamUri() // ter:InvalidArgVal
-	//data := media.GetSnapshotUri{ProfileToken: onvid.ReferenceToken("profile_000")} // ter:InvalidArgVal
-
-	//data := media.GetAudioSources{}
+	data := media.GetServiceCapabilities{} //
+	//data := getStreamUri()
 
 	resp, err := dev.CallMethod(data)
 	if err != nil {
@@ -78,4 +54,17 @@ func newCall(dev *onvif.Device) {
 	log.Println(string(body))
 	return
 
+}
+
+func getStreamUri() media.GetStreamUri {
+	return media.GetStreamUri{
+		StreamSetup: media.StreamSetup{
+			Stream: utils.Stream,
+			Transport: media.Transport{
+				Protocol: utils.Protocol,
+				Tunnel:   nil,
+			},
+		},
+		ProfileToken: utils.Token,
+	}
 }

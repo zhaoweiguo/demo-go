@@ -21,3 +21,7 @@ type Transport struct {
 }
 type TransportProtocol xsd.String
 type ReferenceToken xsd.String
+
+type GetServiceCapabilities struct {
+	XMLName string `xml:"GetServiceCapabilities"`
+}
