@@ -1,10 +1,11 @@
 package ip
 
 import (
-	"github.com/stretchr/testify/assert"
 	"log"
 	"net"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestIp(t *testing.T) {

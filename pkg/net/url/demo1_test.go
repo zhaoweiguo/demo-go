@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/bmizerany/assert"
 	"log"
 	"net/url"
 	"testing"
+
+	"github.com/bmizerany/assert"
 )
 
 func init() {
@@ -26,7 +27,7 @@ func TestB(t *testing.T) {
 	log.Println(url.PathEscape("aaa中国 北京bbb"))
 }
 
-func TestHttpReal(t *testing.T)  {
+func TestHttpReal(t *testing.T) {
 	uri, err := url.Parse("http://zhaoweiguo.com/Downloads/tmp/ME2002_000044A.bin")
 	assert.Equal(t, err, nil)
 	assert.Equal(t, uri.Path, "/Downloads/tmp/ME2002_000044A.bin")
@@ -36,7 +37,7 @@ func TestHttpReal(t *testing.T)  {
 	assert.Equal(t, uri.RawQuery, "")
 }
 
-func TestHttpFake(t *testing.T)  {
+func TestHttpFake(t *testing.T) {
 	uri, err := url.Parse("http://Downloads/tmp/ME2002_000044A.bin")
 	assert.Equal(t, err, nil)
 	assert.Equal(t, uri.Path, "/tmp/ME2002_000044A.bin")
@@ -46,8 +47,7 @@ func TestHttpFake(t *testing.T)  {
 	assert.Equal(t, uri.RawQuery, "")
 }
 
-
-func TestFilePath(t *testing.T)  {
+func TestFilePath(t *testing.T) {
 	uri, err := url.Parse("~/Downloads/tmp/ME2002_000044A.bin")
 	assert.Equal(t, err, nil)
 	assert.Equal(t, uri.Path, "~/Downloads/tmp/ME2002_000044A.bin")

@@ -2,10 +2,11 @@ package hex
 
 import (
 	"encoding/hex"
-	"github.com/stretchr/testify/assert"
 	"log"
 	"os"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func init() {
@@ -65,7 +66,6 @@ func TestEncodeStringAndDecodeString(t *testing.T) {
 
 	strBack, _ := hex.DecodeString(encodedStr)
 	assert.Equal(t, str, strBack)
-
 }
 
 func TestDump(t *testing.T) {

@@ -5,14 +5,15 @@ import (
 
 	"github.com/bluenviron/gortsplib/v3"
 	"github.com/bluenviron/gortsplib/v3/pkg/url"
+	"github.com/zhaoweiguo/demo-go/github.com/bluenviron/gortsplib/rtsp/utils"
 )
 
 func main() {
 
+	//sender, _ := auth.NewSender([]string{"Basic realm=TP-Link IP-Camera"}, "admin", "admin123")
 	c := gortsplib.Client{}
-
 	// parse URL
-	u, err := url.Parse("rtsp://admin:admin123@192.168.124.2:554/live/ch0")
+	u, err := url.Parse(utils.Url)
 	if err != nil {
 		panic(err)
 	}
