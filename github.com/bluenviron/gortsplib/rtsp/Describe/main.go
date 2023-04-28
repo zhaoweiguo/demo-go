@@ -32,6 +32,9 @@ func main() {
 	}
 	log.Println(baseURL, resp)
 	for _, media := range medias {
-		log.Println(media)
+		log.Println("==>", media.Type, media.Direction, media.Control)
+		for _, f := range media.Formats {
+			log.Println("\t\t-->", f.String())
+		}
 	}
 }
