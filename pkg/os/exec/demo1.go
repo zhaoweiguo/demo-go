@@ -1,11 +1,11 @@
 package main
 
 import (
-	"os/exec"
-	"strings"
 	"bytes"
 	"fmt"
 	"log"
+	"os/exec"
+	"strings"
 )
 
 func main() {

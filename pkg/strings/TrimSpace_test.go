@@ -1,9 +1,10 @@
 package strings
 
 import (
-	"github.com/bmizerany/assert"
 	"strings"
 	"testing"
+
+	"github.com/bmizerany/assert"
 )
 
 func TestTrimSpace(t *testing.T) {
