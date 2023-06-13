@@ -24,7 +24,13 @@ type mpegtsMuxer struct {
 	startDTS         time.Duration
 }
 
-// newMPEGTSMuxer allocates a mpegtsMuxer.
+// newMPEGTSMuxer allocates a mp
+//
+//	// setup H264 -> MPEG-TS muxer
+//	mpegtsMuxer, err := newMPEGTSMuxer(forma.SPS, forma.PPS)
+//	if err != nil {
+//		panic(err)
+//	}egtsMuxer.
 func newMPEGTSMuxer(sps []byte, pps []byte) (*mpegtsMuxer, error) {
 	f, err := os.Create("mystream.ts")
 	if err != nil {

@@ -1,3 +1,3 @@
 module github.com/zhaoweiguo/demo-go/pkg/generic
 
-go 1.18
+go 1.20

@@ -8,6 +8,10 @@ import (
 	"github.com/zhaoweiguo/demo-go/github.com/bluenviron/gortsplib/rtsp/utils"
 )
 
+func init() {
+	log.SetFlags(log.Lshortfile)
+}
+
 func main() {
 
 	//sender, _ := auth.NewSender([]string{"Basic realm=TP-Link IP-Camera"}, "admin", "admin123")
