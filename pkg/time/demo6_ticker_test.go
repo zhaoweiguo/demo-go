@@ -26,8 +26,7 @@ func TestTicker(tt *testing.T) {
 }
 
 func TestTimer(tt *testing.T) {
-	d := time.Duration(time.Second * 2)
-	timer := time.NewTimer(d)
+	timer := time.NewTimer(2 * time.Second)
 	defer timer.Stop()
 
 	for {

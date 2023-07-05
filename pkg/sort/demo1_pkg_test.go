@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"log"
 	"sort"
+	"testing"
 )
 
-func main() {
+func TestReverse(t *testing.T) {
 	exprs := []string{"gordon", "simon", "bland", "octopus"}
 	sort.Sort(sort.Reverse(sort.StringSlice(exprs)))
 	fmt.Printf("exprs:%v\n", exprs)
@@ -21,10 +22,15 @@ func main() {
 	sort.Sort(sort.Reverse(sort.IntSlice(s)))
 	fmt.Printf("sorted s:%v\n", s)
 
+}
+
+func TestString(t *testing.T) {
 	b := []string{"a", "c", "e", "f", "b", "c", "a", "g", "b", "b", "c"}
 	sort.Strings(b)
 	log.Println(b)
+}
 
+func TestInt(t *testing.T) {
 	c := []int{1, 6, 1, 2, 4, 7, 8, 4, 3, 2, 5, 6, 6, 8}
 	sort.Ints(c)
 	log.Println(c)
