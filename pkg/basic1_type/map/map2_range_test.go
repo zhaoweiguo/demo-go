@@ -1,13 +1,11 @@
-package main
+package _map
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func main() {
-	demo_map1_int()
-	demo_map2_string()
-}
-
-func demo_map1_int() {
+func TestDemo_map1_int(t *testing.T) {
 	fmt.Println("===demo_map1_int============================")
 	// Here we use `range` to sum the numbers in a slice.
 	// Arrays work like this too.
@@ -30,7 +28,7 @@ func demo_map1_int() {
 	}
 }
 
-func demo_map2_string() {
+func TestDemo_map2_string(t *testing.T) {
 	fmt.Println("===demo_map2_string============================")
 	// `range` on map iterates over key/value pairs.
 	kvs := map[string]string{"a": "apple", "b": "banana", "c": "cat", "d": "dog"}

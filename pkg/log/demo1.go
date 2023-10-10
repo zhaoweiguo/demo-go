@@ -1,21 +1,25 @@
 package main
 
 import (
-	"github.com/EDDYCJY/go-gin-example/pkg/file"
 	"log"
 	"os"
+
+	"github.com/EDDYCJY/go-gin-example/pkg/file"
 )
 
-var(
-	F *os.File
-	DefaultPrefix      = ""
-	logger     *log.Logger
+var (
+	F             *os.File
+	DefaultPrefix = ""
+	logger        *log.Logger
 )
+
+func init() {
+	log.SetFlags(log.Llongfile | log.Ldate | log.Ltime)
+}
 
 func main() {
 	log.Println("zwg:start")
 	log.Printf("%s\n", os.Args)
-
 
 	// 指定日志打印路径
 	var err error
