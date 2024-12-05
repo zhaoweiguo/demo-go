@@ -9,6 +9,6 @@ require (
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/mattn/go-sqlite3 v1.14.8
 	github.com/stretchr/testify v1.3.0
-	golang.org/x/net v0.0.0-20210917221730-978cfadd31cf
-	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
+	golang.org/x/net v0.7.0
+	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
 )
